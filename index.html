@@ -3,200 +3,812 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Janus Premium Membership</title>
-  <link href="tailwind-output.css" rel="stylesheet">
+  <title>Janus - Learn Languages While You Browse</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' }
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
+              '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.8)' }
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    body { background: #0a2247; }
-    .glass { backdrop-filter: blur(10px); background: rgba(19, 41, 75, 0.96); }
-    .glass-light { backdrop-filter: blur(10px); background: rgba(19, 41, 75, 0.85); }
-    .premium-badge { background: linear-gradient(90deg, #4dabf7 0%, #1e88e5 100%); color: #fff; border-radius: 0.5rem; padding: 0.25rem 0.75rem; font-weight: 600; font-size: 0.9rem; }
+    body {
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
+      background-attachment: fixed;
+    }
+    .glass {
+      backdrop-filter: blur(16px);
+      background: rgba(30, 30, 60, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .glass-strong {
+      backdrop-filter: blur(20px);
+      background: rgba(15, 15, 35, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-glow {
+      background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+    }
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    .delay-1 { animation-delay: 1s; }
+    .delay-2 { animation-delay: 2s; }
+    .delay-3 { animation-delay: 3s; }
+    
+    /* Mobile menu improvements */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+    
+    /* Scroll behavior improvements */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Better focus states for accessibility */
+    button:focus, a:focus {
+      outline: 2px solid #60a5fa;
+      outline-offset: 2px;
+    }
   </style>
 </head>
-<body class="bg-[#0a2247] text-[#f0f0f0] min-h-screen">
-  <!-- Hero -->
-  <header class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative bg-[#0a2247]">
-    <div class="relative z-10 max-w-2xl mx-auto">
-      <!-- Logo: fallback to SVG if image is missing -->
-      <div class="mb-4 flex justify-center">
-        <img src="images/image.png" alt="Janus Logo" class="w-16 h-16 mx-auto mb-1 rounded-xl shadow-xl bg-[#13294b] object-contain" onerror="this.style.display='none';this.insertAdjacentHTML('afterend', '<svg width=64 height=64 viewBox=\'0 0 64 64\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=64 height=64 rx=16 fill=\'#1e88e5\'/><text x=\'50%\' y=\'55%\' text-anchor=\'middle\' fill=\'white\' font-size=\'22\' font-family=\'Segoe UI,Arial,sans-serif\' dy=\'.3em\'>J</text></svg>');">
+<body class="text-white overflow-x-hidden">
+  
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 glass">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center font-bold text-lg animate-glow">
+            J
+          </div>
+          <span class="text-xl font-bold gradient-text">Janus</span>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#features" class="text-gray-300 hover:text-white transition-colors">Features</a>
+          <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
+          <a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a>
+          <button class="px-6 py-2 glass rounded-full hover:bg-blue-600/20 transition-all" onclick="scrollToSection('pricing')">Get Started</button>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden p-2" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
-      <h1 class="text-4xl md:text-5xl font-black mb-3 text-white">Stop <span class="text-[#4dabf7]">Studying.</span> <span class="text-[#4dabf7]">Start Browsing.</span></h1>
-      <p class="text-lg md:text-xl text-[#f0f0f0] mb-6 font-semibold">Janus transforms the websites you already visit into personalized language lessons.</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-        <a href="#pricing" class="px-6 py-2 glass text-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-base font-semibold border border-[#4dabf7]">Upgrade to Premium</a>
-        <a href="#" class="px-6 py-2 glass text-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-base font-semibold border border-[#1e88e5]">Install to Chrome</a>
-      </div>
-      <div class="text-blue-200 text-xs">Janus will always stay lightweight and easy to use with minimal bloat. Simply install and go.</div>
     </div>
-  </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-80 glass-strong md:hidden z-50">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-8">
+          <span class="text-xl font-bold gradient-text">Menu</span>
+          <button onclick="toggleMobileMenu()" aria-label="Close menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="space-y-6">
+          <a href="#features" class="block text-gray-300 hover:text-white transition-colors" onclick="toggleMobileMenu()">Features</a>
+          <a href="#pricing" class="block text-gray-300 hover:text-white transition-colors" onclick="toggleMobileMenu()">Pricing</a>
+          <a href="#faq" class="block text-gray-300 hover:text-white transition-colors" onclick="toggleMobileMenu()">FAQ</a>
+          <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold" onclick="scrollToSection('pricing'); toggleMobileMenu()">Get Started</button>
+        </nav>
+      </div>
+    </div>
+  </nav>
 
-  <!-- How Janus Works (Mockup) -->
-  <section class="py-12 bg-[#0a2247] flex flex-col items-center">
-    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">How <span class="text-[#4dabf7]">Janus</span> Works</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-4 w-full max-w-2xl mx-auto justify-center items-center">
-      <!-- Mac App Window 1 -->
-      <div class="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-gradient-to-br from-white to-gray-100 aspect-[9/16] flex flex-col max-w-[180px] mx-auto">
-        <div class="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-red-400 mr-1"></span>
-          <span class="w-2 h-2 rounded-full bg-yellow-300 mr-1"></span>
-          <span class="w-2 h-2 rounded-full bg-green-400 mr-2"></span>
-          <span class="text-gray-500 text-xs font-mono">janus-extension.demo</span>
-        </div>
-        <div class="bg-white flex-1 flex items-center justify-center">
-          <img src="images/1.png" alt="Janus working example 1" class="w-full h-full object-contain aspect-[9/16]">
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <div class="hero-glow absolute inset-0"></div>
+    <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+      <div class="floating">
+        <div class="w-20 h-20 mx-auto mb-8 rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 flex items-center justify-center text-2xl font-bold animate-glow">
+          J
         </div>
       </div>
-      <!-- Mac App Window 2 -->
-      <div class="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-gradient-to-br from-white to-gray-100 aspect-[9/16] flex flex-col max-w-[180px] mx-auto">
-        <div class="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-red-400 mr-1"></span>
-          <span class="w-2 h-2 rounded-full bg-yellow-300 mr-1"></span>
-          <span class="w-2 h-2 rounded-full bg-green-400 mr-2"></span>
-          <span class="text-gray-500 text-xs font-mono">janus-extension.demo</span>
-        </div>
-        <div class="bg-white flex-1 flex items-center justify-center">
-          <img src="images/2.png" alt="Janus working example 2" class="w-full h-full object-contain aspect-[9/16]">
-        </div>
+      
+      <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight">
+        Stop <span class="gradient-text">Studying.</span><br>
+        Start <span class="gradient-text">Browsing.</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+        Transform every website into a personalized language lesson. Learn vocabulary naturally while browsing your favorite content.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+        <button class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all shadow-lg hover:shadow-2xl" onclick="scrollToSection('pricing')">
+          Try Free for 7 Days
+        </button>
+        <button class="px-8 py-4 glass rounded-full text-lg font-semibold hover:bg-white/10 transition-all" onclick="openDemo()">
+          Watch Demo
+        </button>
       </div>
-      <!-- Mac App Window 3 -->
-      <div class="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-gradient-to-br from-white to-gray-100 aspect-[9/16] flex flex-col max-w-[180px] mx-auto">
-        <div class="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-red-400 mr-1"></span>
-          <span class="w-2 h-2 rounded-full bg-yellow-300 mr-1"></span>
-          <span class="w-2 h-2 rounded-full bg-green-400 mr-2"></span>
-          <span class="text-gray-500 text-xs font-mono">janus-extension.demo</span>
-        </div>
-        <div class="bg-white flex-1 flex items-center justify-center">
-          <img src="images/3.png" alt="Janus working example 3" class="w-full h-full object-contain aspect-[9/16]">
-        </div>
+      
+      <div class="text-sm text-gray-400">
+        🔒 No credit card required • ⚡ Install in seconds • 🌍 Works on any website
       </div>
-      <!-- Mac App Window 4 -->
-      <div class="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-gradient-to-br from-white to-gray-100 aspect-[9/16] flex flex-col max-w-[180px] mx-auto">
-        <div class="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-red-400 mr-1"></span>
-          <span class="w-2 h-2 rounded-full bg-yellow-300 mr-1"></span>
-          <span class="w-2 h-2 rounded-full bg-green-400 mr-2"></span>
-          <span class="text-gray-500 text-xs font-mono">janus-extension.demo</span>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-1/4 left-10 w-16 h-16 rounded-full bg-blue-500/20 floating"></div>
+    <div class="absolute top-1/3 right-20 w-12 h-12 rounded-full bg-purple-500/20 floating delay-1"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-8 h-8 rounded-full bg-green-500/20 floating delay-2"></div>
+    <div class="absolute bottom-1/3 right-1/3 w-20 h-20 rounded-full bg-pink-500/20 floating delay-3"></div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="py-16 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold gradient-text mb-2" data-count="10000">0</div>
+          <div class="text-gray-400">Active Users</div>
         </div>
-        <div class="bg-white flex-1 flex items-center justify-center">
-          <img src="images/Screenshot 2025-05-23 at 13.30.33.png" alt="Janus working example 4" class="w-full h-full object-contain aspect-[9/16]">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold gradient-text mb-2" data-count="50">0</div>
+          <div class="text-gray-400">Languages</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold gradient-text mb-2" data-count="1000000">0</div>
+          <div class="text-gray-400">Words Translated</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold gradient-text mb-2" data-count="99">0</div>
+          <div class="text-gray-400">Satisfaction Rate</div>
         </div>
       </div>
     </div>
-    <span class="sr-only">Mockups of a Mac application window showing Janus in action. Replace the images with your own screenshots.</span>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6">
+          How <span class="gradient-text">Janus</span> Works
+        </h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Our AI seamlessly integrates with your browsing experience
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="glass-strong rounded-3xl p-8 card-hover text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-2xl">
+            🌐
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Browse Naturally</h3>
+          <p class="text-gray-300">Visit any website as you normally would. Janus works invisibly in the background.</p>
+        </div>
+        
+        <div class="glass-strong rounded-3xl p-8 card-hover text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-2xl">
+            🤖
+          </div>
+          <h3 class="text-2xl font-bold mb-4">AI Selects Words</h3>
+          <p class="text-gray-300">Our smart algorithm picks vocabulary that matches your learning level and goals.</p>
+        </div>
+        
+        <div class="glass-strong rounded-3xl p-8 card-hover text-center">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center text-2xl">
+            📈
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Track Progress</h3>
+          <p class="text-gray-300">Watch your vocabulary grow with detailed analytics and personalized insights.</p>
+        </div>
+      </div>
+      
+      <!-- Demo Mockup -->
+      <div class="glass-strong rounded-3xl p-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
+          <div class="bg-gray-100 px-6 py-4 flex items-center space-x-3">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div class="flex-1 bg-white rounded-lg px-4 py-2 text-sm text-gray-600">
+              https://example-news-site.com/article
+            </div>
+          </div>
+          <div class="p-8 bg-white text-gray-800">
+            <h3 class="text-2xl font-bold mb-4">Breaking: Technology Advances</h3>
+            <p class="text-lg leading-relaxed">
+              The latest <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded border-2 border-blue-300 cursor-help relative group">breakthrough</span> in artificial intelligence has <span class="bg-green-100 text-green-800 px-2 py-1 rounded border-2 border-green-300 cursor-help">revolutionized</span> how we approach complex problems...
+            </p>
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+              <div class="text-sm text-blue-700 font-semibold mb-2">✨ Janus Translation</div>
+              <div class="text-sm text-blue-800">
+                <strong>breakthrough</strong> (noun): a sudden, dramatic, and important discovery or development
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Features -->
-  <section class="py-20 bg-[#0a2247]">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Why <span class="text-[#4dabf7]">Janus?</span></h2>
-        <p class="text-xl text-[#f0f0f0] max-w-2xl mx-auto font-medium">Learn vocabulary in context while browsing your favorite sites. No extra time commitment. AI-powered word selection. Seamless, distraction-free experience. Track progress and build your vocabulary without flashcards.</p>
+  <section id="features" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6">
+          Why Choose <span class="gradient-text">Janus?</span>
+        </h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl flex flex-col justify-between">
-          <h3 class="text-2xl font-bold text-white mb-2">Free Tier: <span class="text-[#4dabf7]">Janus Explorer</span></h3>
-          <div class="text-lg font-bold text-[#4dabf7] mb-3">FREE!</div>
-          <ul class="list-disc list-inside text-[#f0f0f0] space-y-2">
-            <li>Unlimited daily word translations</li>
-            <li>No restrictions on what's translated</li>
-            <li>Random selection of words to be translated</li>
-            <li>Will always remain free to use</li>
-            <li>Private/secure translation</li>
-          </ul>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="w-12 h-12 mb-6 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
+            ⚡
+          </div>
+          <h3 class="text-xl font-bold mb-4">Zero Time Investment</h3>
+          <p class="text-gray-300">Learn while doing what you already do. No extra study time required.</p>
         </div>
-        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl flex flex-col justify-between">
-          <h3 class="text-2xl font-bold text-white mb-2">Premium: <span class="premium-badge">Janus Founders</span></h3>
-          <div class="text-lg font-bold text-[#4dabf7] mb-3">$4/month</div>
-          <ul class="list-disc list-inside text-[#f0f0f0] space-y-2">
-            <li>Custom AI selection of small phrase of adjustable level</li>
-            <li>Unlimited intelligent translation, based on context</li>
-            <li>Opt-in analytics system to track your language progress</li>
-            <li>Supports the free tier's server costs</li>
-            <li>Plus whatever's to come</li>
-          </ul>
+        
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="w-12 h-12 mb-6 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+            🎯
+          </div>
+          <h3 class="text-xl font-bold mb-4">Contextual Learning</h3>
+          <p class="text-gray-300">Words are learned in their natural context, improving retention and understanding.</p>
+        </div>
+        
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="w-12 h-12 mb-6 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center">
+            🤖
+          </div>
+          <h3 class="text-xl font-bold mb-4">AI-Powered Selection</h3>
+          <p class="text-gray-300">Smart algorithms choose words based on your level and learning goals.</p>
+        </div>
+        
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="w-12 h-12 mb-6 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center">
+            🔒
+          </div>
+          <h3 class="text-xl font-bold mb-4">Privacy First</h3>
+          <p class="text-gray-300">Your browsing data stays private. We only process text for translations.</p>
+        </div>
+        
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="w-12 h-12 mb-6 rounded-xl bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center">
+            📊
+          </div>
+          <h3 class="text-xl font-bold mb-4">Progress Tracking</h3>
+          <p class="text-gray-300">Detailed analytics show your vocabulary growth and learning patterns.</p>
+        </div>
+        
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="w-12 h-12 mb-6 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center">
+            🌍
+          </div>
+          <h3 class="text-xl font-bold mb-4">Multiple Languages</h3>
+          <p class="text-gray-300">Support for dozens of languages with more being added regularly.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Value Proposition -->
-  <section class="py-16 bg-[#0a2247]">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <div class="grid md:grid-cols-2 gap-10">
-        <div class="flex flex-col gap-5">
-          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
-            <span class="w-4 h-4 rounded-full bg-[#4dabf7] flex-shrink-0"></span>
-            <span class="text-white font-semibold text-lg">Learn vocabulary in context while browsing your favorite sites</span>
+  <!-- Testimonials Section -->
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6">
+          What <span class="gradient-text">Users</span> Say
+        </h2>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-lg font-bold mr-4">
+              M
+            </div>
+            <div>
+              <div class="font-bold">Maria González</div>
+              <div class="text-sm text-gray-400">Spanish → English</div>
+            </div>
           </div>
-          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
-            <span class="w-4 h-4 rounded-full bg-[#1e88e5] flex-shrink-0"></span>
-            <span class="text-white font-semibold text-lg">No extra time commitment – integrate learning into your daily routine</span>
-          </div>
-          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
-            <span class="w-4 h-4 rounded-full bg-[#388e3c] flex-shrink-0"></span>
-            <span class="text-white font-semibold text-lg">AI-powered word selection based on your proficiency level</span>
-          </div>
-          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
-            <span class="w-4 h-4 rounded-full bg-[#ff9800] flex-shrink-0"></span>
-            <span class="text-white font-semibold text-lg">Seamless, distraction-free experience with elegant design</span>
-          </div>
-          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
-            <span class="w-4 h-4 rounded-full bg-[#d32f2f] flex-shrink-0"></span>
-            <span class="text-white font-semibold text-lg">Track progress and build your vocabulary without flashcards</span>
-          </div>
+          <p class="text-gray-300 mb-4">"I've learned more vocabulary in 3 months with Janus than in a year of traditional studying. It's seamless!"</p>
+          <div class="flex text-yellow-400">★★★★★</div>
         </div>
-        <div class="glass rounded-2xl p-10 flex flex-col justify-center items-center border border-white/10 shadow-2xl">
-          <div class="text-2xl font-bold mb-3 text-white">Special Offers</div>
-          <ul class="text-[#f0f0f0] space-y-2">
-            <li><span class="font-semibold text-white">Free Trial:</span> 7-day free trial for all Premium tiers</li>
-            <li><span class="font-semibold text-white">Launch Special:</span> Use code <span class="text-[#4dabf7] font-bold">EARLYBIRD</span> for 20% off your first year</li>
-            <li><span class="font-semibold text-white">Annual Discount:</span> Save 16% when paying annually</li>
-            <li><span class="font-semibold text-white">Referral Program:</span> Give friends 25% off their first 3 months, get one month free when they subscribe</li>
+        
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center text-lg font-bold mr-4">
+              J
+            </div>
+            <div>
+              <div class="font-bold">John Smith</div>
+              <div class="text-sm text-gray-400">English → Japanese</div>
+            </div>
+          </div>
+          <p class="text-gray-300 mb-4">"Perfect for busy professionals. I'm learning Japanese while reading tech blogs. Genius!"</p>
+          <div class="flex text-yellow-400">★★★★★</div>
+        </div>
+        
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-lg font-bold mr-4">
+              L
+            </div>
+            <div>
+              <div class="font-bold">Lisa Chen</div>
+              <div class="text-sm text-gray-400">English → French</div>
+            </div>
+          </div>
+          <p class="text-gray-300 mb-4">"The AI word selection is incredibly smart. It picks exactly the right difficulty level for me."</p>
+          <div class="flex text-yellow-400">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6">
+          Simple <span class="gradient-text">Pricing</span>
+        </h2>
+        <p class="text-xl text-gray-300">Choose the plan that fits your learning journey</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Free Plan -->
+        <div class="glass-strong rounded-3xl p-8 card-hover">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold mb-2">Free Explorer</h3>
+            <div class="text-4xl font-black mb-4">$0<span class="text-lg text-gray-400">/month</span></div>
+            <p class="text-gray-300">Perfect for trying out Janus</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>Basic word translations</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>Random word selection</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>5 languages supported</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>Privacy protection</span>
+            </li>
           </ul>
+          
+          <button class="w-full py-4 glass rounded-full font-semibold hover:bg-white/10 transition-all" onclick="startFreeTrial()">
+            Get Started Free
+          </button>
         </div>
+        
+        <!-- Premium Plan -->
+        <div class="glass-strong rounded-3xl p-8 card-hover relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            Most Popular
+          </div>
+          
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold mb-2">Premium Founders</h3>
+            <div class="text-4xl font-black mb-4">$4<span class="text-lg text-gray-400">/month</span></div>
+            <p class="text-gray-300">For serious language learners</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>AI-powered word selection</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>Unlimited translations</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>Progress analytics</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>All languages</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>Difficulty customization</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+              <span>Priority support</span>
+            </li>
+          </ul>
+          
+          <button class="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all" onclick="startPremiumTrial()">
+            Start 7-Day Free Trial
+          </button>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <p class="text-gray-400">🎉 Use code <span class="text-blue-400 font-bold">EARLYBIRD</span> for 20% off your first year</p>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="py-20 bg-[#0a2247]">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-10 text-center">Frequently Asked <span class="text-[#4dabf7]">Questions</span></h2>
-      <div class="grid md:grid-cols-2 gap-10">
-        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
-          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">How is Premium different from the free version?</div>
-          <div class="text-[#f0f0f0]">While the free version offers basic translation features, Premium removes all limits on translations, enables multi-language learning, adds personal vocabulary tracking, and provides enhanced customization options to perfectly match your learning style.</div>
+  <section id="faq" class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6">
+          <span class="gradient-text">FAQ</span>
+        </h2>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="glass-strong rounded-2xl p-8 faq-item" onclick="toggleFAQ(this)">
+          <div class="flex items-center justify-between cursor-pointer">
+            <h3 class="text-xl font-bold text-blue-400">How does Janus select which words to translate?</h3>
+            <svg class="w-6 h-6 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <div class="faq-content mt-4 text-gray-300 hidden">
+            <p>Our AI analyzes the text's context, your learning level, and vocabulary frequency to choose the most beneficial words for your language learning journey.</p>
+          </div>
         </div>
-        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
-          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">Can I change my target language(s)?</div>
-          <div class="text-[#f0f0f0]">Yes! Premium members can change their target languages at any time from their dashboard. Polyglot and Linguist members can learn multiple languages simultaneously.</div>
+        
+        <div class="glass-strong rounded-2xl p-8 faq-item" onclick="toggleFAQ(this)">
+          <div class="flex items-center justify-between cursor-pointer">
+            <h3 class="text-xl font-bold text-blue-400">Will this slow down my browsing?</h3>
+            <svg class="w-6 h-6 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <div class="faq-content mt-4 text-gray-300 hidden">
+            <p>Not at all! Janus is optimized for performance and works seamlessly in the background without affecting page load times or browsing speed.</p>
+          </div>
         </div>
-        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
-          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">Will Premium slow down my browsing?</div>
-          <div class="text-[#f0f0f0]">Not at all. Janus Premium is engineered for performance, with optimizations that ensure translations happen quickly without affecting page load times.</div>
+        
+        <div class="glass-strong rounded-2xl p-8 faq-item" onclick="toggleFAQ(this)">
+          <div class="flex items-center justify-between cursor-pointer">
+            <h3 class="text-xl font-bold text-blue-400">Is my browsing data private?</h3>
+            <svg class="w-6 h-6 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <div class="faq-content mt-4 text-gray-300 hidden">
+            <p>Absolutely. We only process the minimal text needed for translations and never store your browsing history or personal information.</p>
+          </div>
         </div>
-        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
-          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">How do you select which words to translate?</div>
-          <div class="text-[#f0f0f0]">Our AI-powered algorithm selects words based on your chosen difficulty level, vocabulary frequency in the language, and usefulness in everyday conversation. Premium members get access to advanced customization of these parameters.</div>
+        
+        <div class="glass-strong rounded-2xl p-8 faq-item" onclick="toggleFAQ(this)">
+          <div class="flex items-center justify-between cursor-pointer">
+            <h3 class="text-xl font-bold text-blue-400">Can I use Janus on mobile?</h3>
+            <svg class="w-6 h-6 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <div class="faq-content mt-4 text-gray-300 hidden">
+            <p>Currently Janus works on desktop Chrome and Chromium-based browsers. Mobile support is coming soon!</p>
+          </div>
         </div>
-        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
-          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">Is my browsing data private?</div>
-          <div class="text-[#f0f0f0]">Absolutely. Janus only processes the text needed for translations and never stores your browsing history or personal data.</div>
+        
+        <div class="glass-strong rounded-2xl p-8 faq-item" onclick="toggleFAQ(this)">
+          <div class="flex items-center justify-between cursor-pointer">
+            <h3 class="text-xl font-bold text-blue-400">What languages are supported?</h3>
+            <svg class="w-6 h-6 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+          <div class="faq-content mt-4 text-gray-300 hidden">
+            <p>We support over 30 languages including Spanish, French, German, Italian, Portuguese, Japanese, Korean, Chinese, and many more.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-12 glass border-t border-white/10 mt-10 bg-[#13294b]">
-    <div class="container mx-auto px-6 text-center">
-      <div class="mb-4">
-        <span class="text-2xl font-bold bg-gradient-to-r from-[#4dabf7] to-[#1e88e5] bg-clip-text text-transparent">Janus</span>
+  <!-- CTA Section -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="glass-strong rounded-3xl p-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Ready to Transform Your <span class="gradient-text">Learning?</span>
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Join thousands of learners who are already using Janus to master new languages
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <button class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all shadow-lg" onclick="startFreeTrial()">
+            Start Your Free Trial
+          </button>
+          <button class="px-8 py-4 glass rounded-full text-lg font-semibold hover:bg-white/10 transition-all" onclick="downloadExtension()">
+            Download Now
+          </button>
+        </div>
+        <p class="text-sm text-gray-400 mt-6">
+          No credit card required • Cancel anytime • 7-day money-back guarantee
+        </p>
       </div>
-      <p class="text-blue-100 text-sm">&copy; 2024 Janus - Learn Language By Browsing. Not affiliated with Google Chrome.</p>
-      <p class="text-blue-200 text-xs mt-2">For support: janus-translator@example.com</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 glass-strong border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center font-bold">
+              J
+            </div>
+            <span class="text-2xl font-bold gradient-text">Janus</span>
+          </div>
+          <p class="text-gray-400 mb-6">
+            Learn languages naturally while browsing the web. Transform every website into your personal language classroom.
+          </p>
+          <div class="flex space-x-4">
+            <a href="mailto:support@janus-extension.com" class="w-8 h-8 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all cursor-pointer">📧</a>
+            <a href="#" class="w-8 h-8 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all cursor-pointer">🐦</a>
+            <a href="#" class="w-8 h-8 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all cursor-pointer">💼</a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="font-bold mb-4">Product</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+            <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Chrome Extension</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Languages</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="font-bold mb-4">Support</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+            <li><a href="mailto:support@janus-extension.com" class="hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 Janus. All rights reserved. Made with ❤️ for language learners worldwide.</p>
+      </div>
     </div>
   </footer>
+
+  <!-- Demo Modal -->
+  <div id="demoModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="glass-strong rounded-3xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-2xl font-bold">Janus Demo</h3>
+        <button onclick="closeDemoModal()" class="w-8 h-8 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all">×</button>
+      </div>
+      <div class="aspect-video bg-gray-800 rounded-2xl flex items-center justify-center mb-4">
+        <div class="text-center">
+          <div class="text-4xl mb-4">🎬</div>
+          <p class="text-gray-300">Demo video would be embedded here</p>
+          <p class="text-sm text-gray-400 mt-2">Showing Janus in action on real websites</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all" onclick="startFreeTrial()">
+          Try It Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu functions
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+
+    // FAQ functions
+    function toggleFAQ(element) {
+      const content = element.querySelector('.faq-content');
+      const icon = element.querySelector('.faq-icon');
+      
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    }
+
+    // Demo modal functions
+    function openDemo() {
+      document.getElementById('demoModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDemoModal() {
+      document.getElementById('demoModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Scroll to section function
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Action functions (these would connect to your backend)
+    function startFreeTrial() {
+      // Redirect to signup or open signup modal
+      alert('Redirecting to free trial signup...');
+    }
+
+    function startPremiumTrial() {
+      // Redirect to premium trial signup
+      alert('Redirecting to premium trial signup...');
+    }
+
+    function downloadExtension() {
+      // Redirect to Chrome Web Store
+      alert('Redirecting to Chrome Web Store...');
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('[data-count]');
+      
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+          if (current < target) {
+            current += increment;
+            if (target >= 1000000) {
+              counter.textContent = (current / 1000000).toFixed(1) + 'M';
+            } else if (target >= 1000) {
+              counter.textContent = (current / 1000).toFixed(0) + 'K';
+            } else {
+              counter.textContent = Math.ceil(current);
+            }
+            requestAnimationFrame(updateCounter);
+          } else {
+            if (target >= 1000000) {
+              counter.textContent = (target / 1000000).toFixed(1) + 'M';
+            } else if (target >= 1000) {
+              counter.textContent = (target / 1000).toFixed(0) + 'K';
+            } else {
+              counter.textContent = target;
+            }
+          }
+        };
+        
+        updateCounter();
+      });
+    }
+
+    // Intersection observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-slide-up');
+          
+          // Trigger counter animation when statistics section is visible
+          if (entry.target.querySelector('[data-count]')) {
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all cards and sections
+    document.querySelectorAll('.card-hover, [data-count]').forEach(element => {
+      observer.observe(element);
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobileMenu');
+      const menuButton = document.querySelector('[onclick="toggleMobileMenu()"]');
+      
+      if (!menu.contains(e.target) && !menuButton.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+
+    // Close demo modal when clicking outside
+    document.getElementById('demoModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeDemoModal();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        // Close mobile menu
+        document.getElementById('mobileMenu').classList.remove('open');
+        // Close demo modal
+        closeDemoModal();
+      }
+    });
+  </script>
 </body>
-</html> 
+</html>
