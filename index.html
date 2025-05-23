@@ -580,9 +580,7 @@
         </div>
       </div>
       <div class="text-center">
-        <button class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all" onclick="startFreeTrial()">
-          Start using Janus!
-        </button>
+        <a href="janus-chrome-extension.crx" download class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all block">Start using Janus!</a>
       </div>
     </div>
   </div>
@@ -621,22 +619,6 @@
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }
-
-    // Action functions (these would connect to your backend)
-    function startFreeTrial() {
-      // Redirect to signup or open signup modal
-      alert('Redirecting to free trial signup...');
-    }
-
-    function startPremiumTrial() {
-      // Redirect to premium trial signup
-      alert('Redirecting to premium trial signup...');
-    }
-
-    function downloadExtension() {
-      // Redirect to Chrome Web Store
-      alert('Redirecting to Chrome Web Store...');
     }
 
     // Smooth scrolling for navigation links
