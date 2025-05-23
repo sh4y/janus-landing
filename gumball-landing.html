@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janus Premium Membership</title>
+  <link href="tailwind-output.css" rel="stylesheet">
+  <style>
+    body { background: #0a2247; }
+    .glass { backdrop-filter: blur(10px); background: rgba(19, 41, 75, 0.96); }
+    .glass-light { backdrop-filter: blur(10px); background: rgba(19, 41, 75, 0.85); }
+    .premium-badge { background: linear-gradient(90deg, #4dabf7 0%, #1e88e5 100%); color: #fff; border-radius: 0.5rem; padding: 0.25rem 0.75rem; font-weight: 600; font-size: 0.9rem; }
+  </style>
+</head>
+<body class="bg-[#0a2247] text-[#f0f0f0] min-h-screen">
+  <!-- Hero -->
+  <header class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative bg-[#0a2247]">
+    <div class="relative z-10 max-w-2xl mx-auto">
+      <!-- Logo: fallback to SVG if image is missing -->
+      <div class="mb-4 flex justify-center">
+        <img src="janus-chrome-extension/images/image.png" alt="Janus Logo" class="w-16 h-16 mx-auto mb-1 rounded-xl shadow-xl bg-[#13294b] object-contain" onerror="this.style.display='none';this.insertAdjacentHTML('afterend', '<svg width=64 height=64 viewBox=\'0 0 64 64\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=64 height=64 rx=16 fill=\'#1e88e5\'/><text x=\'50%\' y=\'55%\' text-anchor=\'middle\' fill=\'white\' font-size=\'22\' font-family=\'Segoe UI,Arial,sans-serif\' dy=\'.3em\'>J</text></svg>');">
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black mb-3 text-white">Stop <span class="text-[#4dabf7]">Studying.</span> <span class="text-[#4dabf7]">Start Browsing.</span></h1>
+      <p class="text-lg md:text-xl text-[#f0f0f0] mb-6 font-semibold">Janus transforms the websites you already visit into personalized language lessons.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+        <a href="#pricing" class="px-6 py-2 glass text-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-base font-semibold border border-[#4dabf7]">Upgrade to Premium</a>
+        <a href="#" class="px-6 py-2 glass text-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-base font-semibold border border-[#1e88e5]">Install to Chrome</a>
+      </div>
+      <div class="text-blue-200 text-xs">Janus will always stay lightweight and easy to use with minimal bloat. Simply install and go.</div>
+    </div>
+  </header>
+
+  <!-- How Janus Works (Mockup) -->
+  <section class="py-12 bg-[#0a2247] flex flex-col items-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">How <span class="text-[#4dabf7]">Janus</span> Works</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-4 w-full max-w-2xl mx-auto justify-center items-center">
+      <!-- Mac App Window 1 -->
+      <div class="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-gradient-to-br from-white to-gray-100 aspect-[9/16] flex flex-col max-w-[180px] mx-auto">
+        <div class="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-200">
+          <span class="w-2 h-2 rounded-full bg-red-400 mr-1"></span>
+          <span class="w-2 h-2 rounded-full bg-yellow-300 mr-1"></span>
+          <span class="w-2 h-2 rounded-full bg-green-400 mr-2"></span>
+          <span class="text-gray-500 text-xs font-mono">janus-extension.demo</span>
+        </div>
+        <div class="bg-white flex-1 flex items-center justify-center">
+          <img src="images/1.png" alt="Janus working example 1" class="w-full h-full object-contain aspect-[9/16]">
+        </div>
+      </div>
+      <!-- Mac App Window 2 -->
+      <div class="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-gradient-to-br from-white to-gray-100 aspect-[9/16] flex flex-col max-w-[180px] mx-auto">
+        <div class="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-200">
+          <span class="w-2 h-2 rounded-full bg-red-400 mr-1"></span>
+          <span class="w-2 h-2 rounded-full bg-yellow-300 mr-1"></span>
+          <span class="w-2 h-2 rounded-full bg-green-400 mr-2"></span>
+          <span class="text-gray-500 text-xs font-mono">janus-extension.demo</span>
+        </div>
+        <div class="bg-white flex-1 flex items-center justify-center">
+          <img src="images/2.png" alt="Janus working example 2" class="w-full h-full object-contain aspect-[9/16]">
+        </div>
+      </div>
+      <!-- Mac App Window 3 -->
+      <div class="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-gradient-to-br from-white to-gray-100 aspect-[9/16] flex flex-col max-w-[180px] mx-auto">
+        <div class="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-200">
+          <span class="w-2 h-2 rounded-full bg-red-400 mr-1"></span>
+          <span class="w-2 h-2 rounded-full bg-yellow-300 mr-1"></span>
+          <span class="w-2 h-2 rounded-full bg-green-400 mr-2"></span>
+          <span class="text-gray-500 text-xs font-mono">janus-extension.demo</span>
+        </div>
+        <div class="bg-white flex-1 flex items-center justify-center">
+          <img src="images/3.png" alt="Janus working example 3" class="w-full h-full object-contain aspect-[9/16]">
+        </div>
+      </div>
+      <!-- Mac App Window 4 -->
+      <div class="rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-gradient-to-br from-white to-gray-100 aspect-[9/16] flex flex-col max-w-[180px] mx-auto">
+        <div class="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-200">
+          <span class="w-2 h-2 rounded-full bg-red-400 mr-1"></span>
+          <span class="w-2 h-2 rounded-full bg-yellow-300 mr-1"></span>
+          <span class="w-2 h-2 rounded-full bg-green-400 mr-2"></span>
+          <span class="text-gray-500 text-xs font-mono">janus-extension.demo</span>
+        </div>
+        <div class="bg-white flex-1 flex items-center justify-center">
+          <img src="images/Screenshot 2025-05-23 at 13.30.33.png" alt="Janus working example 4" class="w-full h-full object-contain aspect-[9/16]">
+        </div>
+      </div>
+    </div>
+    <span class="sr-only">Mockups of a Mac application window showing Janus in action. Replace the images with your own screenshots.</span>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20 bg-[#0a2247]">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Why <span class="text-[#4dabf7]">Janus?</span></h2>
+        <p class="text-xl text-[#f0f0f0] max-w-2xl mx-auto font-medium">Learn vocabulary in context while browsing your favorite sites. No extra time commitment. AI-powered word selection. Seamless, distraction-free experience. Track progress and build your vocabulary without flashcards.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl flex flex-col justify-between">
+          <h3 class="text-2xl font-bold text-white mb-2">Free Tier: <span class="text-[#4dabf7]">Janus Explorer</span></h3>
+          <div class="text-lg font-bold text-[#4dabf7] mb-3">FREE!</div>
+          <ul class="list-disc list-inside text-[#f0f0f0] space-y-2">
+            <li>Unlimited daily word translations</li>
+            <li>No restrictions on what's translated</li>
+            <li>Random selection of words to be translated</li>
+            <li>Will always remain free to use</li>
+            <li>Private/secure translation</li>
+          </ul>
+        </div>
+        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl flex flex-col justify-between">
+          <h3 class="text-2xl font-bold text-white mb-2">Premium: <span class="premium-badge">Janus Founders</span></h3>
+          <div class="text-lg font-bold text-[#4dabf7] mb-3">$4/month</div>
+          <ul class="list-disc list-inside text-[#f0f0f0] space-y-2">
+            <li>Custom AI selection of small phrase of adjustable level</li>
+            <li>Unlimited intelligent translation, based on context</li>
+            <li>Opt-in analytics system to track your language progress</li>
+            <li>Supports the free tier's server costs</li>
+            <li>Plus whatever's to come</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition -->
+  <section class="py-16 bg-[#0a2247]">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="flex flex-col gap-5">
+          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
+            <span class="w-4 h-4 rounded-full bg-[#4dabf7] flex-shrink-0"></span>
+            <span class="text-white font-semibold text-lg">Learn vocabulary in context while browsing your favorite sites</span>
+          </div>
+          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
+            <span class="w-4 h-4 rounded-full bg-[#1e88e5] flex-shrink-0"></span>
+            <span class="text-white font-semibold text-lg">No extra time commitment – integrate learning into your daily routine</span>
+          </div>
+          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
+            <span class="w-4 h-4 rounded-full bg-[#388e3c] flex-shrink-0"></span>
+            <span class="text-white font-semibold text-lg">AI-powered word selection based on your proficiency level</span>
+          </div>
+          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
+            <span class="w-4 h-4 rounded-full bg-[#ff9800] flex-shrink-0"></span>
+            <span class="text-white font-semibold text-lg">Seamless, distraction-free experience with elegant design</span>
+          </div>
+          <div class="glass flex items-center gap-4 p-5 rounded-xl shadow-lg">
+            <span class="w-4 h-4 rounded-full bg-[#d32f2f] flex-shrink-0"></span>
+            <span class="text-white font-semibold text-lg">Track progress and build your vocabulary without flashcards</span>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-10 flex flex-col justify-center items-center border border-white/10 shadow-2xl">
+          <div class="text-2xl font-bold mb-3 text-white">Special Offers</div>
+          <ul class="text-[#f0f0f0] space-y-2">
+            <li><span class="font-semibold text-white">Free Trial:</span> 7-day free trial for all Premium tiers</li>
+            <li><span class="font-semibold text-white">Launch Special:</span> Use code <span class="text-[#4dabf7] font-bold">EARLYBIRD</span> for 20% off your first year</li>
+            <li><span class="font-semibold text-white">Annual Discount:</span> Save 16% when paying annually</li>
+            <li><span class="font-semibold text-white">Referral Program:</span> Give friends 25% off their first 3 months, get one month free when they subscribe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-[#0a2247]">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-10 text-center">Frequently Asked <span class="text-[#4dabf7]">Questions</span></h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
+          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">How is Premium different from the free version?</div>
+          <div class="text-[#f0f0f0]">While the free version offers basic translation features, Premium removes all limits on translations, enables multi-language learning, adds personal vocabulary tracking, and provides enhanced customization options to perfectly match your learning style.</div>
+        </div>
+        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
+          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">Can I change my target language(s)?</div>
+          <div class="text-[#f0f0f0]">Yes! Premium members can change their target languages at any time from their dashboard. Polyglot and Linguist members can learn multiple languages simultaneously.</div>
+        </div>
+        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
+          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">Will Premium slow down my browsing?</div>
+          <div class="text-[#f0f0f0]">Not at all. Janus Premium is engineered for performance, with optimizations that ensure translations happen quickly without affecting page load times.</div>
+        </div>
+        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
+          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">How do you select which words to translate?</div>
+          <div class="text-[#f0f0f0]">Our AI-powered algorithm selects words based on your chosen difficulty level, vocabulary frequency in the language, and usefulness in everyday conversation. Premium members get access to advanced customization of these parameters.</div>
+        </div>
+        <div class="glass rounded-2xl p-10 border border-white/10 shadow-2xl">
+          <div class="font-semibold text-[#4dabf7] mb-2 text-lg">Is my browsing data private?</div>
+          <div class="text-[#f0f0f0]">Absolutely. Janus only processes the text needed for translations and never stores your browsing history or personal data.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 glass border-t border-white/10 mt-10 bg-[#13294b]">
+    <div class="container mx-auto px-6 text-center">
+      <div class="mb-4">
+        <span class="text-2xl font-bold bg-gradient-to-r from-[#4dabf7] to-[#1e88e5] bg-clip-text text-transparent">Janus</span>
+      </div>
+      <p class="text-blue-100 text-sm">&copy; 2024 Janus - Learn Language By Browsing. Not affiliated with Google Chrome.</p>
+      <p class="text-blue-200 text-xs mt-2">For support: janus-translator@example.com</p>
+    </div>
+  </footer>
+</body>
+</html> 
