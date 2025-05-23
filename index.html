@@ -110,6 +110,7 @@
       cursor: zoom-out;
       transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
     }
+    .hero-section-logo-spacing { margin-top: 5rem !important; }
   </style>
 </head>
 <body class="text-white overflow-x-hidden">
@@ -120,15 +121,9 @@
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
           <a href="https://thresholdtech.net" aria-label="ThresholdTechnologies Home" class="flex items-center">
-            <img src="images/thresh.png" alt="ThresholdTechnologies Logo" class="w-10 h-10 mr-2" />
-            <span class="text-xs text-gray-400 hidden md:inline-block">Parent Company</span>
+            <img src="images/thresh.png" alt="ThresholdTechnologies Logo" class="w-32 h-32" />
           </a>
-          <!-- <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center font-bold text-lg animate-glow">
-            J
-          </div> -->
-          <a href="/" aria-label="Home">
-            <img src="images/logo-cropped.png" alt="Janus Logo" class="w-20 h-20">
-          </a>
+
         </div>
         
         <!-- Desktop Navigation -->
@@ -762,6 +757,12 @@
         progressBar.style.display = 'none';
         progressFill.style.width = '0%';
       });
+    });
+
+    // Increased spacing above main Janus logo
+    document.addEventListener('DOMContentLoaded', function(){
+      var heroLogo = document.querySelector('.floating');
+      if(heroLogo) heroLogo.classList.add('hero-section-logo-spacing');
     });
   </script>
 </body>
