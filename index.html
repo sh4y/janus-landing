@@ -121,7 +121,7 @@
         </div>
         
         <!-- Mobile Menu Button -->
-        <button class="md:hidden p-2" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <button class="md:hidden p-2" onclick="toggleMobileMenu(event)" aria-label="Toggle menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -134,17 +134,17 @@
       <div class="p-6">
         <div class="flex items-center justify-between mb-8">
           <span class="text-xl font-bold gradient-text">Menu</span>
-          <button onclick="toggleMobileMenu()" aria-label="Close menu">
+          <button onclick="toggleMobileMenu(event)" aria-label="Close menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
         </div>
         <nav class="space-y-6">
-          <a href="#features" class="block text-gray-300 hover:text-white transition-colors" onclick="toggleMobileMenu()">Features</a>
-          <a href="#pricing" class="block text-gray-300 hover:text-white transition-colors" onclick="toggleMobileMenu()">Pricing</a>
-          <a href="#faq" class="block text-gray-300 hover:text-white transition-colors" onclick="toggleMobileMenu()">FAQ</a>
-          <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold" onclick="scrollToSection('pricing'); toggleMobileMenu()">Get Started</button>
+          <a href="#features" class="block text-gray-300 hover:text-white transition-colors" onclick="toggleMobileMenu(event)">Features</a>
+          <a href="#pricing" class="block text-gray-300 hover:text-white transition-colors" onclick="toggleMobileMenu(event)">Pricing</a>
+          <a href="#faq" class="block text-gray-300 hover:text-white transition-colors" onclick="toggleMobileMenu(event)">FAQ</a>
+          <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold" onclick="scrollToSection('pricing'); toggleMobileMenu(event)">Get Started</button>
         </nav>
       </div>
     </div>
@@ -154,7 +154,7 @@
   <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
     <div class="hero-glow absolute inset-0"></div>
     <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-      <div class="floating">
+      <div class="floating mt-8">
         <a href="/" aria-label="Home">
           <img src="images/logo-cropped.png" alt="Janus Logo" class="w-32 h-32 mx-auto mb-8">
         </a>
@@ -166,12 +166,33 @@
       <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
         Transform every website into a personalized language lesson. Learn vocabulary naturally while browsing your favorite content.
       </p>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
         <button class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all shadow-lg hover:shadow-2xl" onclick="downloadExtension()">
           Install Now!
         </button>
       </div>
-      <div class="text-sm text-gray-400">
+      <!-- Demo Mockup (moved up) -->
+      <div class="glass-strong rounded-3xl p-4 max-w-3xl mx-auto mb-4">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
+          <div class="bg-gray-100 px-4 py-2 flex items-center space-x-3">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div class="flex-1 bg-white rounded-lg px-2 py-1 text-sm text-gray-600">
+              https://example-news-site.com/article
+            </div>
+          </div>
+          <div class="p-4 bg-white text-gray-800">
+            <h3 class="text-2xl font-bold mb-2">Unlock Effortless Language Learning with Janus</h3>
+            <p class="text-base leading-relaxed">
+              Janus revolutionizes how you acquire new vocabulary by seamlessly integrating language learning into your daily browsing habits. Imagine effortlessly absorbing new words in their natural <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="context">contexto</span> as you read articles, blogs, or any online content. Our intelligent system analyzes the text on any webpage and subtly replaces specific words with their translations in your target language. This isn't just random substitution; Janus focuses on <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="relevant">relevante</span> vocabulary tailored to your learning level, making the process feel natural and intuitive. You build your understanding word by word, creating an <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="immersive">inmersiva</span> experience without ever needing to open a textbook. Click on a translated word, and Janus instantly provides its original form and meaning, reinforcing your learning.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="text-sm text-gray-400 mb-2 text-center">
         🔒 No credit card required • ⚡ Install in seconds • 🌍 Works on any website
       </div>
     </div>
@@ -179,30 +200,6 @@
     <div class="absolute top-1/3 right-20 w-12 h-12 rounded-full bg-purple-500/20 floating delay-1"></div>
     <div class="absolute bottom-1/4 left-1/4 w-8 h-8 rounded-full bg-green-500/20 floating delay-2"></div>
     <div class="absolute bottom-1/3 right-1/3 w-20 h-20 rounded-full bg-pink-500/20 floating delay-3"></div>
-  </section>
-
-  <!-- Demo Mockup (moved up) -->
-  <section class="py-8">
-    <div class="glass-strong rounded-3xl p-6 max-w-4xl mx-auto">
-      <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
-        <div class="bg-gray-100 px-6 py-4 flex items-center space-x-3">
-          <div class="flex space-x-2">
-            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-          </div>
-          <div class="flex-1 bg-white rounded-lg px-4 py-2 text-sm text-gray-600">
-            https://example-news-site.com/article
-          </div>
-        </div>
-        <div class="p-6 bg-white text-gray-800">
-          <h3 class="text-2xl font-bold mb-4">Unlock Effortless Language Learning with Janus</h3>
-          <p class="text-lg leading-relaxed">
-            Janus revolutionizes how you acquire new vocabulary by seamlessly integrating language learning into your daily browsing habits. Imagine effortlessly absorbing new words in their natural <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="context">contexto</span> as you read articles, blogs, or any online content. Our intelligent system analyzes the text on any webpage and subtly replaces specific words with their translations in your target language. This isn't just random substitution; Janus focuses on <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="relevant">relevante</span> vocabulary tailored to your learning level, making the process feel natural and intuitive. You build your understanding word by word, creating an <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="immersive">inmersiva</span> experience without ever needing to open a textbook. Click on a translated word, and Janus instantly provides its original form and meaning, reinforcing your learning.
-          </p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- How It Works -->
@@ -558,7 +555,8 @@
 
   <script>
     // Mobile menu functions
-    function toggleMobileMenu() {
+    function toggleMobileMenu(event) {
+      if (event) event.stopPropagation();
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('open');
     }
@@ -684,9 +682,7 @@
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('mobileMenu');
-      const menuButton = document.querySelector('[onclick="toggleMobileMenu()"]');
-      
-      if (!menu.contains(e.target) && !menuButton.contains(e.target)) {
+      if (!menu.contains(e.target)) {
         menu.classList.remove('open');
       }
     });
