@@ -95,6 +95,21 @@
       outline: 2px solid #60a5fa;
       outline-offset: 2px;
     }
+    .janus-img-expanded {
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) scale(1.2) !important;
+      width: auto !important;
+      height: auto !important;
+      max-width: 64rem !important;
+      max-height: 90vh !important;
+      z-index: 9999 !important;
+      background: white;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      cursor: zoom-out;
+      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
   </style>
 </head>
 <body class="text-white overflow-x-hidden">
@@ -300,6 +315,27 @@
           <p class="text-gray-300">Support for dozens of languages with more being added regularly.</p>
         </div>
       </div>
+      <!-- Images row -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+        <div class="flex flex-col items-center justify-center overflow-visible relative">
+          <img src="images/2.png" alt="Janus Screenshot 2" class="janus-expandable-img rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out cursor-zoom-in" />
+          <div class="janus-progress-bar w-full max-w-xs h-1 bg-gray-700 rounded mt-2 overflow-hidden" style="display:none;">
+            <div class="janus-progress-fill h-full bg-blue-500 transition-all" style="width:0%; transition: width 1s linear;"></div>
+          </div>
+        </div>
+        <div class="flex flex-col items-center justify-center overflow-visible relative">
+          <img src="images/3.png" alt="Janus Screenshot 3" class="janus-expandable-img rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out cursor-zoom-in" />
+          <div class="janus-progress-bar w-full max-w-xs h-1 bg-gray-700 rounded mt-2 overflow-hidden" style="display:none;">
+            <div class="janus-progress-fill h-full bg-blue-500 transition-all" style="width:0%; transition: width 1s linear;"></div>
+          </div>
+        </div>
+        <div class="flex flex-col items-center justify-center overflow-visible relative">
+          <img src="images/4.png" alt="Janus Screenshot 4" class="janus-expandable-img rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out cursor-zoom-in" />
+          <div class="janus-progress-bar w-full max-w-xs h-1 bg-gray-700 rounded mt-2 overflow-hidden" style="display:none;">
+            <div class="janus-progress-fill h-full bg-blue-500 transition-all" style="width:0%; transition: width 1s linear;"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -464,19 +500,13 @@
           Ready to Transform Your <span class="gradient-text">Learning?</span>
         </h2>
         <p class="text-xl text-gray-300 mb-8">
-          Join thousands of learners who are already using Janus to master new languages
+          Join other learners who are already using Janus to master new languages
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <button class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all shadow-lg" onclick="startFreeTrial()">
             Start using Janus!
           </button>
-          <button class="px-8 py-4 glass rounded-full text-lg font-semibold hover:bg-white/10 transition-all" onclick="downloadExtension()">
-            Download Now
-          </button>
         </div>
-        <p class="text-sm text-gray-400 mt-6">
-          No credit card required • Cancel anytime • 7-day money-back guarantee
-        </p>
       </div>
     </div>
   </section>
@@ -702,6 +732,28 @@
         // Close demo modal
         closeDemoModal();
       }
+    });
+
+    // Janus image expand on delayed hover with progress bar
+    document.querySelectorAll('.janus-expandable-img').forEach(img => {
+      let timer;
+      let progressBar = img.parentElement.querySelector('.janus-progress-bar');
+      let progressFill = img.parentElement.querySelector('.janus-progress-fill');
+      img.addEventListener('mouseenter', function() {
+        progressBar.style.display = 'block';
+        progressFill.style.width = '0%';
+        setTimeout(() => { progressFill.style.width = '100%'; }, 10);
+        timer = setTimeout(() => {
+          img.classList.add('janus-img-expanded');
+          progressBar.style.display = 'none';
+        }, 1000);
+      });
+      img.addEventListener('mouseleave', function() {
+        clearTimeout(timer);
+        img.classList.remove('janus-img-expanded');
+        progressBar.style.display = 'none';
+        progressFill.style.width = '0%';
+      });
     });
   </script>
 </body>
