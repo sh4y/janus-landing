@@ -144,6 +144,7 @@
           <a href="#features" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-blue-500/20 hover:text-blue-300 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400">Features</a>
           <a href="#pricing" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-purple-500/20 hover:text-purple-300 transition-all focus:outline-none focus:ring-2 focus:ring-purple-400">Pricing</a>
           <a href="#faq" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-green-500/20 hover:text-green-300 transition-all focus:outline-none focus:ring-2 focus:ring-green-400">FAQ</a>
+          <a href="blog.html" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-yellow-500/20 hover:text-yellow-300 transition-all focus:outline-none focus:ring-2 focus:ring-yellow-400">Blog</a>
           <a href="janus-chrome-extension.zip" download class="px-7 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-bold shadow-lg hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400">Download Now</a>
         </div>
         
@@ -192,7 +193,8 @@
         <span class="gradient-text">Janus.</span>
       </h1>
       <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-        Learn vocabulary naturally while browsing your favorite content. We guarantee you'll end each month with new vocabulary under your belt.
+        Learn vocabulary naturally while browsing your favorite content. 
+        We guarantee you'll end each month with new vocabulary under your belt.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
         <a href="janus-chrome-extension.zip" download class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all shadow-lg hover:shadow-2xl text-center block">
@@ -215,7 +217,7 @@
           <div class="p-4 bg-white text-gray-800">
             <h3 class="text-2xl font-bold mb-2">Unlock Effortless Language Learning with Janus</h3>
             <p class="text-base leading-relaxed">
-              Janus revolutionizes how you acquire new vocabulary by seamlessly integrating language learning into your daily browsing habits. Imagine effortlessly absorbing new words in their natural <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="context">contexto</span> as you read articles, blogs, or any online content. Our intelligent system analyzes the text on any webpage and subtly replaces specific words with their translations in your target language. This isn't just random substitution; Janus focuses on <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="relevant">relevante</span> vocabulary tailored to your learning level, making the process feel natural and intuitive. You build your understanding word by word, creating an <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="immersive">inmersiva</span> experience without ever needing to open a textbook. Click on a translated word, and Janus instantly provides its original form and meaning, reinforcing your learning.
+              Janus revolutionizes how you acquire new vocabulary by seamlessly integrating language learning into your daily browsing habits. Imagine effortlessly absorbing new words in their natural <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="context">contexto</span> as you read articles, blogs, or any online content. Our intelligent system analyzes the text on any webpage and subtly replaces specific words with their translations in your target language. This isn't just random substitution; Janus focuses on <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="relevant">relevante</span> vocabulary tailored to your learning level, making the process feel natural and intuitive. You build your understanding word by word, creating an <span class='bg-yellow-300 text-black px-1 rounded cursor-help inline-block' title="immersive">inmersiva</span> experience without ever needing to open a textbook. Unlike others, we don't promise you'll learn the language, but you'll absolutely LEARN.
             </p>
           </div>
         </div>
@@ -559,6 +561,32 @@
     </div>
   </section>
 
+  <!-- Support Contact Section -->
+  <section class="py-12">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="glass-strong rounded-2xl p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4 gradient-text">Support Contact</h2>
+        <p class="text-lg text-gray-300 mb-4">Need help or have questions? Reach out to our support team:</p>
+        <div class="flex flex-col items-center justify-center relative" style="min-height:64px;">
+          <a href="mailto:info@threshold.technology"
+             class="inline-block px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold text-white shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 mx-auto"
+             id="supportEmail"
+             style="position:relative; z-index:1;">
+            Email: info@threshold.technology
+          </a>
+          <button id="copyEmailBtn"
+                  class="absolute left-1/2 ml-40 top-1/2 transform -translate-y-1/2 px-3 py-2 bg-blue-700 rounded-full text-white font-bold shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  aria-label="Copy email to clipboard"
+                  type="button"
+                  style="z-index:2;">
+            <svg class="inline w-5 h-5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/><rect x="3" y="3" width="13" height="13" rx="2" stroke-width="2"/></svg>
+          </button>
+          <span id="copyTooltip" class="absolute left-1/2 ml-56 top-1/2 transform -translate-y-1/2 text-green-400 text-sm font-semibold opacity-0 transition-opacity duration-300">Copied!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="py-16 glass-strong border-t border-white/10">
     <div class="max-w-6xl mx-auto px-6">
@@ -790,6 +818,18 @@
           galleryContent.style.maxHeight = '0';
           galleryChevron.style.transform = 'rotate(0deg)';
         }
+      });
+    }
+
+    // Copy email to clipboard logic
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const supportEmail = document.getElementById('supportEmail');
+    const copyTooltip = document.getElementById('copyTooltip');
+    if (copyEmailBtn && supportEmail && copyTooltip) {
+      copyEmailBtn.addEventListener('click', function() {
+        navigator.clipboard.writeText(supportEmail.textContent.trim());
+        copyTooltip.style.opacity = 1;
+        setTimeout(() => { copyTooltip.style.opacity = 0; }, 1200);
       });
     }
   </script>

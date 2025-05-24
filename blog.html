@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janus Blog</title>
+  <meta name="description" content="Read the latest updates, tips, and stories from the Janus team.">
+  <link rel="canonical" href="https://threshold.technology/blog" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Janus Blog" />
+  <meta property="og:description" content="Read the latest updates, tips, and stories from the Janus team." />
+  <meta property="og:image" content="https://threshold.technology/images/logo-cropped.png" />
+  <meta property="og:url" content="https://threshold.technology/blog" />
+  <meta property="og:type" content="website" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Janus Blog" />
+  <meta name="twitter:description" content="Read the latest updates, tips, and stories from the Janus team." />
+  <meta name="twitter:image" content="https://threshold.technology/images/logo-cropped.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
+      background-attachment: fixed;
+    }
+    .glass {
+      backdrop-filter: blur(16px);
+      background: rgba(30, 30, 60, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .glass-strong {
+      backdrop-filter: blur(20px);
+      background: rgba(15, 15, 35, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    button:focus, a:focus {
+      outline: 2px solid #60a5fa;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="text-white overflow-x-hidden">
+  <!-- Janus Logo Top Left -->
+  <a href="/janus" aria-label="Janus Home" class="fixed top-6 left-6 z-50 group focus:outline-none focus:ring-2 focus:ring-blue-400" style="line-height:0;">
+    <img src="images/logo-cropped.png" alt="Janus Logo" class="w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-lg transition-transform duration-200 group-hover:scale-105 group-active:scale-95 bg-white/10" />
+  </a>
+  <!-- Blog Content Section -->
+  <main class="max-w-3xl mx-auto px-6 py-8 space-y-12" id="blog">
+    <!-- Blog Post Accordion -->
+    <section>
+      <!-- Blog Post 1 (expanded by default) -->
+      <div class="mb-12">
+        <button type="button" class="w-full flex items-center justify-between px-6 py-4 glass-strong rounded-2xl text-xl font-bold gradient-text focus:outline-none focus:ring-2 focus:ring-blue-400 mb-6 transition-all" aria-expanded="true" aria-controls="post1Content" id="post1Toggle">
+          <span>Learn a Language Without Studying: How Janus Enables Passive Learning</span>
+          <svg class="w-6 h-6 ml-2 transition-transform duration-300 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="post1Content" class="max-h-[3000px] overflow-hidden transition-all duration-500 ease-in-out glass-strong rounded-2xl p-8 space-y-6" aria-hidden="false">
+          <div class="text-gray-400 text-sm mb-4">Posted on June 1, 2024 by The Janus Team</div>
+          <article class="prose prose-invert prose-lg max-w-none text-gray-200 space-y-6">
+            <p>Learning a new language can feel daunting, especially if you're a busy professional or student with little free time. But what if you could learn a language without studying in the traditional sense? Imagine picking up Spanish or Japanese without spending hours on textbooks or flashcards. With Janus – a Chrome browser extension that passively replaces words on webpages with their translations – this seemingly magical idea becomes a reality. Janus offers a simple and effective way to gradually learn a new language without dedicating extra time to study.</p>
+            <p>Instead of scheduling classes or drilling vocabulary, you just go about your normal web browsing. Whether you're reading the news, scrolling through social media, or researching for work, Janus will sprinkle in foreign language words in place of your native language. You continue reading as usual, but now you're passively absorbing new vocabulary in context. It's language learning on autopilot – no classes, no flashcards, no change to your daily routine.</p>
+            <hr />
+            <h2>Passive Learning While You Browse the Web</h2>
+            <p>Our daily habit of browsing the internet turns into a mini language lesson with Janus. The extension intelligently swaps out a few words or phrases on each webpage with their translated equivalents in the language you want to learn. For example, as you read a news article in English, you might see <em>bonjour</em> instead of "hello" or <em>gracias</em> instead of "thank you." You still understand the overall content (thanks to the surrounding context), but now those foreign words catch your eye and start to stick in your memory.</p>
+            <ul>
+              <li><strong>Learn without changing your habits:</strong> Janus works in the background as you surf the web. You learn a new language without changing your routine – perfect for busy people who don't have an extra hour to study every day. Read your morning blog or check emails as usual, and let the learning happen naturally.</li>
+              <li><strong>No dedicated study sessions needed:</strong> Because the vocabulary is integrated into content you're already interested in (tech articles, sports news, etc.), you're learning without it feeling like studying. There's no need to set aside time after work for language practice – Janus turns your existing internet time into learning time. This saves you time and lowers the pressure; you're essentially multitasking in the best way possible.</li>
+            </ul>
+            <hr />
+            <h2>Save Time and Boost Retention with Contextual Learning</h2>
+            <p>One of the biggest advantages of Janus's passive approach is contextual learning. You're encountering new foreign words in the middle of real sentences and real webpages. This means your brain isn't just seeing a random word on a flashcard – you're seeing how it's used in a meaningful context. For example, reading "I drink 水 every day" teaches you that 水 (pronounced shuǐ) means "water" in Chinese, all within a normal sentence about daily life. Learning words in context like this can dramatically improve your memory of them. According to education experts, words are easier to recall when they are exposed to context, since our brains associate new words with familiar situations (<a href="https://98thpercentile.com">98thpercentile.com</a>).</p>
+            <p>In other words, seeing a word used in a sentence helps it stick much better than memorizing it in isolation. You're not just learning what the word means – you're learning how it fits into language naturally. This leads to better long-term vocabulary retention. (After all, it's one thing to know a translation, but recognizing it in a real sentence is when you truly internalize it.) Janus leverages this by providing natural, contextual learning. As you encounter a word repeatedly on different sites, you get multiple contextual impressions. Over time, that repetition in varied contexts reinforces your understanding. It's a bit like living abroad and picking up words from everyday surroundings – except you're doing it while browsing at home.</p>
+            <hr />
+            <h2>Key Benefits of Using Janus for Passive Language Learning</h2>
+            <ul>
+              <li><strong>Effortless Vocabulary Building:</strong> Acquire new words without formal study. Janus turns idle browsing into an educational experience, so you learn a language without "learning" – no homework, just casual exposure.</li>
+              <li><strong>Learn Anytime, Anywhere:</strong> Since it works on any website, you get mini lessons whether you're reading work documents, shopping online, or scrolling through news feeds. Every site becomes a chance to practice, which means learning happens even on your busiest days.</li>
+              <li><strong>Seamless Integration:</strong> The translated words are blended into pages without disrupting your reading. Janus is unobtrusive – you still enjoy content in your native language with just a gentle overlay of new language terms. It feels natural and not like an add-on chore.</li>
+              <li><strong>Better Retention Through Context:</strong> As mentioned, seeing words in context helps you remember them. You're essentially creating mental links between the new word and the scenario or sentence you saw it in. This leads to stronger memory retention than isolated rote memorization (<a href="https://98thpercentile.com">98thpercentile.com</a>).</li>
+              <li><strong>Fun and Motivating:</strong> It's actually fun to suddenly recognize a foreign word on a page you're reading. Each time you figure out a word's meaning from context, it's a little victory. This casual reinforcement keeps you motivated. In fact, contextual learning tends to be more engaging than dry memorization, so you're more likely to stay consistent (<a href="https://98thpercentile.com">98thpercentile.com</a>).</li>
+            </ul>
+            <hr />
+            <h2>Learn Naturally Without Stress (Ideal for Busy People)</h2>
+            <p>For professionals and students with packed schedules, Janus offers a stress-free way to keep making progress in a new language. There's no feeling of "I have to study tonight." Instead, you'll find you've learned a handful of new words by the end of the day simply by doing what you needed to do anyway. Over weeks and months, these small gains add up significantly. By learning without changing your routine, you remove one of the biggest barriers to language acquisition: lack of time.</p>
+            <p>Janus is especially useful if you're often too tired after work or classes to open a language app. Now you don't have to – your brain is getting language practice during your normal routine (drinking your morning coffee and reading the news, catching up on blog posts, etc.). It's guilt-free learning, because even on days when you didn't set aside study time, you still got exposure to your target language.</p>
+            <p>Finally, this passive immersion can spark your curiosity to learn even more. When you see a sentence with a few foreign words, you might occasionally hover over or click (if Janus provides translations on hover) to double-check meaning or pronunciation. Those moments are quick and on-the-spot, but they reinforce your learning right when your brain is curious. It's a very natural way of learning, closer to how we pick up our first language – through constant small exposures in everyday life.</p>
+            <hr />
+            <p><strong>Ready to experience language learning without the stress?</strong><br>
+            Janus makes it possible to learn a new language without studying in the conventional way. If you're excited to build your vocabulary effortlessly, give Janus a try. It's free to install and easy to use. Install the Janus Chrome extension today from the Chrome Web Store and turn your daily browsing into a language-learning adventure. You'll be saying hola, bonjour, 你好 to a new language in no time – no intensive study required!</p>
+          </article>
+        </div>
+      </div>
+      <!-- Blog Post 2: Repetitive Immersion -->
+      <div class="mb-12">
+        <button type="button" class="w-full flex items-center justify-between px-6 py-4 glass-strong rounded-2xl text-xl font-bold gradient-text focus:outline-none focus:ring-2 focus:ring-blue-400 mb-6 transition-all" aria-expanded="false" aria-controls="post2Content" id="post2Toggle">
+          <span>Repetitive Immersion: How Consistent Contextual Exposure Supercharges Language Learning</span>
+          <svg class="w-6 h-6 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="post2Content" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out glass-strong rounded-2xl p-8 space-y-6" aria-hidden="true">
+          <div class="text-gray-400 text-sm mb-4">Last updated: 25 May 2025</div>
+          <article class="prose prose-invert prose-lg max-w-none text-gray-200 space-y-6">
+            <blockquote>
+              <strong>TL;DR</strong><br>
+              <strong>Repetitive immersion</strong> means meeting the same target words many times inside authentic, meaningful content.<br>
+              Research shows that 5–10 well-spaced encounters can lock new vocabulary into long-term memory faster than isolated drills.
+            </blockquote>
+            <h2>1. What Exactly <em>Is</em> Repetitive Immersion?</h2>
+            <p>Repetitive immersion sits at the intersection of <em>incidental</em> learning and <em>spaced repetition</em>. Instead of deliberate flash-card sessions, you repeatedly encounter new words as a natural by-product of reading, watching or listening to material you would consume anyway—news articles, podcasts, community forums, technical docs, even memes. Each brief exposure nudges the word from fragile recognition toward automatic recall.</p>
+            <h2>2. Why Repetition Works: A Quick Look at the Brain</h2>
+            <p>When you see or hear a word again, the brain strengthens synaptic connections in the hippocampus and neocortex—a process called <strong>memory consolidation</strong>. Neuroscience studies show that repetition speeds up this neural "rewiring," turning shaky short-term traces into stable long-term memories.</p>
+            <blockquote>
+              <strong>Key Cognitive Benefits</strong><br>
+              <table>
+                <thead>
+                  <tr><th>Benefit</th><th>How Repetition Delivers</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Consolidation</strong></td><td>Multiple exposures trigger protein synthesis that stabilizes memory traces.</td></tr>
+                  <tr><td><strong>Automaticity</strong></td><td>Retrieval becomes faster; you no longer mentally "translate."</td></tr>
+                  <tr><td><strong>Contextual Richness</strong></td><td>New contexts add usage clues (grammar, tone), deepening understanding.</td></tr>
+                </tbody>
+              </table>
+            </blockquote>
+            <h2>3. What the Research Says About Exposure Frequency</h2>
+            <ul>
+              <li><strong>How many encounters?</strong> Early L2 reading studies found that <strong>six encounters</strong> yielded significantly more word-gain than two or four, but diminishing returns set in after about ten.</li>
+              <li><strong>Incidental vs. intentional:</strong> A 2022 <em>Frontiers</em> study reported higher retention from repeated incidental exposure (e.g., songs or stories) than from single-session rote learning.</li>
+              <li><strong>Multimodal boosts:</strong> Combining reading <em>and</em> listening to the same text amplifies gains, as recent EFL research shows.</li>
+            </ul>
+            <h2>4. Building Repetitive Immersion Into Everyday Life</h2>
+            <h3>4.1 Layer Exposure on Existing Habits</h3>
+            <table>
+              <thead>
+                <tr><th>Daily Activity</th><th>Immersion Tweak</th><th>Result</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Morning news</td><td>Read bilingual articles or enable partial-translation browser extensions.</td><td>3–5 fresh word hits before breakfast.</td></tr>
+                <tr><td>Commuter podcast</td><td>Re-listen to the same episode with target-language transcripts.</td><td>Dual-channel reinforcement.</td></tr>
+                <tr><td>Evening streaming</td><td>Turn on L2 subtitles, then re-watch select scenes.</td><td>Visual + auditory repetition in context.</td></tr>
+              </tbody>
+            </table>
+            <h3>4.2 Set a "Goldilocks" Frequency</h3>
+            <p>Aim for <em>5–10 contextual encounters</em> per word over one to two weeks. Too few, and the trace fades; too many in one sitting, and attention drops. Tools that let you control swap rate or subtitle density help maintain this balance.</p>
+            <h3>4.3 Mix Modalities</h3>
+            <p>Rotate between reading, listening and speaking. Each mode fires different neural circuits, creating multiple retrieval pathways for the same word.</p>
+            <h2>5. Tools (and DIY Hacks) to Automate Repetition—No Hard Sell</h2>
+            <ul>
+              <li><strong>Browser extensions</strong> that selectively swap words during browsing (e.g., Janus, Language Reactor).</li>
+              <li><strong>Bilingual readers</strong> or <strong>interlinear e-books</strong> that interlace L1 and L2 text.</li>
+              <li><strong>Spaced-repetition apps</strong> (Anki, Mnemosyne) set to <em>low daily card limits</em> to avoid overload.</li>
+              <li><strong>Replay playlists:</strong> short audio clips or song choruses queued for automatic repeat.</li>
+            </ul>
+            <p>Use whichever mix feels sustainable; the goal is consistent, varied exposure—not perfection.</p>
+            <h2>6. Tracking Progress Without Killing the Fun</h2>
+            <ol>
+              <li><strong>Word log:</strong> Note new words that now "pop" instantly.</li>
+              <li><strong>Comprehension snapshots:</strong> Re-read an article two weeks later to gauge how many swapped words feel effortless.</li>
+              <li><strong>Micro-speaking tests:</strong> Slip the word into casual chat or voice memos.</li>
+            </ol>
+            <h2>7. Frequently Asked Questions</h2>
+            <dl>
+              <dt><strong>Q: Is repetitive immersion enough for full fluency?</strong></dt>
+              <dd><strong>A:</strong> It's unbeatable for vocabulary growth and reading fluency, but you'll still need active practice for grammar and speaking accuracy.</dd>
+              <dt><strong>Q: How fast will I see results?</strong></dt>
+              <dd><strong>A:</strong> Learners typically notice sharper word recall after 2–3 weeks of daily exposure (≈200–300 encounters total).</dd>
+              <dt><strong>Q: Can I overload myself?</strong></dt>
+              <dd><strong>A:</strong> Yes—if every other word is unknown, comprehension tanks. Start with 5–10% new-word density and scale slowly.</dd>
+            </dl>
+            <h2>8. Key Takeaways</h2>
+            <ul>
+              <li>Repetition plus context is a memory super-combo.</li>
+              <li>Shoot for 5–10 spaced encounters per word.</li>
+              <li>Embed those encounters into habits you already have—news, music, streaming.</li>
+              <li>Use light-touch tech (or simple hacks) to automate exposure so it happens even on your busiest days.</li>
+            </ul>
+            <p><strong>Bottom line:</strong> Repetitive immersion turns your everyday media diet into a compounding vocabulary engine. Lean into it, keep it consistent, and watch your lexical bank grow with surprisingly little conscious effort.</p>
+          </article>
+        </div>
+      </div>
+      <!-- Blog Post 3 (empty, collapsed) -->
+      <div class="mb-6 hidden">
+        <button type="button" class="w-full flex items-center justify-between px-6 py-4 glass-strong rounded-2xl text-xl font-bold gradient-text focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2 transition-all" aria-expanded="false" aria-controls="post3Content" id="post3Toggle">
+          <span>Blog Post Title #3</span>
+          <svg class="w-6 h-6 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="post3Content" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out glass-strong rounded-2xl p-6" aria-hidden="true">
+          <div class="text-gray-400 text-sm mb-2">Posted on [Date] by [Author]</div>
+          <div class="prose prose-invert max-w-none text-gray-200">
+            <!-- Add your blog content here -->
+          </div>
+        </div>
+      </div>
+      <!-- Add more blog post sections as needed -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-16 glass-strong border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="col-span-2">
+          <p class="text-gray-400 mb-6">
+            Learn languages naturally while browsing the web. Transform every website into your personal language classroom.
+          </p>
+          <div class="mt-4 text-xs text-gray-500">Janus is a product of ThresholdTechnologies</div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 Janus. All rights reserved. Made with ❤️ for language learners worldwide.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // Blog accordion logic
+  function setupBlogAccordion(postNum) {
+    const toggle = document.getElementById(`post${postNum}Toggle`);
+    const content = document.getElementById(`post${postNum}Content`);
+    if (!toggle || !content) return;
+    toggle.addEventListener('click', function() {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      content.setAttribute('aria-hidden', expanded);
+      if (!expanded) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        toggle.querySelector('svg').classList.add('rotate-180');
+      } else {
+        content.style.maxHeight = '0';
+        toggle.querySelector('svg').classList.remove('rotate-180');
+      }
+    });
+  }
+  setupBlogAccordion(1);
+  setupBlogAccordion(2);
+  setupBlogAccordion(3);
+  </script>
+</body>
+</html> 
