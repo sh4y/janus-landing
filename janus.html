@@ -329,24 +329,28 @@
           <p class="text-gray-300">Support for dozens of languages with more being added regularly.</p>
         </div>
       </div>
-      <!-- Images row -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-        <div class="flex flex-col items-center justify-center overflow-visible relative">
-          <img src="images/2.png" alt="Janus Screenshot 2" class="janus-expandable-img rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out cursor-zoom-in" />
-          <div class="janus-progress-bar w-full max-w-xs h-1 bg-gray-700 rounded mt-2 overflow-hidden" style="display:none;">
-            <div class="janus-progress-fill h-full bg-blue-500 transition-all" style="width:0%; transition: width 1s linear;"></div>
+    </div>
+  </section>
+
+  <!-- Gallery Section (collapsible) -->
+  <section class="py-12" id="gallery">
+    <div class="max-w-5xl mx-auto px-6">
+      <button id="galleryToggle" class="w-full flex items-center justify-between px-6 py-4 glass-strong rounded-2xl text-2xl font-bold gradient-text focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4" aria-expanded="false" aria-controls="galleryContent">
+        <span>Gallery</span>
+        <svg id="galleryChevron" class="w-7 h-7 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div id="galleryContent" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" aria-hidden="true">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex flex-col items-center justify-center overflow-visible relative">
+            <img src="images/2.png" alt="Janus Screenshot 2" class="rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out" />
           </div>
-        </div>
-        <div class="flex flex-col items-center justify-center overflow-visible relative">
-          <img src="images/3.png" alt="Janus Screenshot 3" class="janus-expandable-img rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out cursor-zoom-in" />
-          <div class="janus-progress-bar w-full max-w-xs h-1 bg-gray-700 rounded mt-2 overflow-hidden" style="display:none;">
-            <div class="janus-progress-fill h-full bg-blue-500 transition-all" style="width:0%; transition: width 1s linear;"></div>
+          <div class="flex flex-col items-center justify-center overflow-visible relative">
+            <img src="images/3.png" alt="Janus Screenshot 3" class="rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out" />
           </div>
-        </div>
-        <div class="flex flex-col items-center justify-center overflow-visible relative">
-          <img src="images/4.png" alt="Janus Screenshot 4" class="janus-expandable-img rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out cursor-zoom-in" />
-          <div class="janus-progress-bar w-full max-w-xs h-1 bg-gray-700 rounded mt-2 overflow-hidden" style="display:none;">
-            <div class="janus-progress-fill h-full bg-blue-500 transition-all" style="width:0%; transition: width 1s linear;"></div>
+          <div class="flex flex-col items-center justify-center overflow-visible relative">
+            <img src="images/4.png" alt="Janus Screenshot 4" class="rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out" />
           </div>
         </div>
       </div>
@@ -773,6 +777,25 @@
       document.addEventListener('DOMContentLoaded', function() {
         var banner = document.getElementById('pendingReviewBanner');
         if (banner) banner.style.display = 'none';
+      });
+    }
+
+    // Gallery collapsible logic
+    const galleryToggle = document.getElementById('galleryToggle');
+    const galleryContent = document.getElementById('galleryContent');
+    const galleryChevron = document.getElementById('galleryChevron');
+    if (galleryToggle && galleryContent && galleryChevron) {
+      galleryToggle.addEventListener('click', function() {
+        const expanded = galleryToggle.getAttribute('aria-expanded') === 'true';
+        galleryToggle.setAttribute('aria-expanded', !expanded);
+        galleryContent.setAttribute('aria-hidden', expanded);
+        if (!expanded) {
+          galleryContent.style.maxHeight = galleryContent.scrollHeight + 'px';
+          galleryChevron.style.transform = 'rotate(180deg)';
+        } else {
+          galleryContent.style.maxHeight = '0';
+          galleryChevron.style.transform = 'rotate(0deg)';
+        }
       });
     }
   </script>

@@ -95,6 +95,27 @@
         opacity: 1;
         pointer-events: auto;
       }
+
+      #janusLogoLink:focus {
+        outline: 3px solid #3b82f6;
+        outline-offset: 4px;
+        border-radius: 16px;
+        box-shadow: 0 0 0 6px rgba(59,130,246,0.15);
+      }
+      #janusLogoLink:hover, #janusLogoLink:focus {
+        background: rgba(59,130,246,0.08);
+        border-radius: 16px;
+        box-shadow: 0 4px 24px 0 rgba(59,130,246,0.18);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59,130,246,0.15);}
+        50% { transform: scale(1.08); box-shadow: 0 0 24px 8px rgba(59,130,246,0.18);}
+      }
+      .janus-logo.pulsing {
+        animation: pulse 1.2s infinite;
+      }
     </style>
   </head>
   <body>
@@ -105,7 +126,7 @@
         class="logo threshold-logo"
         id="thresholdLogo"
       />
-      <a href="/janus" id="janusLogoLink" class="hidden">
+      <a href="/janus" id="janusLogoLink" class="hidden" tabindex="0" role="button" aria-label="Go to Janus" title="Go to Janus">
         <img
           src="images/logo.png"
           alt="JANUS"
@@ -121,9 +142,18 @@
         setTimeout(function () {
           document.getElementById("thresholdLogo").classList.add("hidden");
           var janus = document.getElementById("janusLogoLink");
+          var janusImg = document.getElementById("janusLogo");
           janus.classList.remove("hidden");
           setTimeout(function() {
             janus.classList.add("visible");
+            janusImg.classList.add("pulsing");
+            // Auto-redirect after 5s if not clicked
+            var autoRedirect = setTimeout(function() {
+              window.location.href = '/janus';
+            }, 5000);
+            // Cancel auto-redirect if user clicks/taps
+            janus.addEventListener('click', function() { clearTimeout(autoRedirect); });
+            janus.addEventListener('touchstart', function() { clearTimeout(autoRedirect); });
           }, 10);
         }, 4000);
       });
