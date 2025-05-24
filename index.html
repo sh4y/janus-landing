@@ -217,6 +217,20 @@
     <div class="absolute bottom-1/3 right-1/3 w-20 h-20 rounded-full bg-pink-500/20 floating delay-3"></div>
   </section>
 
+  <!-- Pending Review Banner -->
+  <div id="pendingReviewBanner" class="max-w-4xl mx-auto px-6 my-8 flex justify-center">
+    <div class="glass-strong rounded-xl shadow-lg px-6 py-4 flex items-center space-x-4 w-full">
+      <svg class="w-6 h-6 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
+      </svg>
+      <div class="flex-1 text-sm md:text-base">
+        <span class="font-bold gradient-text">Janus is pending Chrome Web Store review.</span>
+        <span class="text-gray-200 ml-1">You can test the beta by loading the package in Chrome using developer tools (<a href="https://support.google.com/chrome_webstore/answer/2664769?hl=en" target="_blank" class="underline text-blue-300 hover:text-blue-400">instructions</a>).</span>
+      </div>
+      <button onclick="dismissPendingReviewBanner()" aria-label="Dismiss banner" class="ml-2 text-gray-400 hover:text-white focus:outline-none text-xl font-bold">×</button>
+    </div>
+  </div>
+
   <!-- How It Works -->
   <section class="py-16 relative">
     <div class="max-w-7xl mx-auto px-6">
@@ -747,6 +761,20 @@
       var heroLogo = document.querySelector('.floating');
       if(heroLogo) heroLogo.classList.add('hero-section-logo-spacing');
     });
+
+    // Dismiss pending review banner for session
+    function dismissPendingReviewBanner() {
+      document.getElementById('pendingReviewBanner').style.display = 'none';
+      sessionStorage.setItem('janusPendingReviewBannerDismissed', '1');
+    }
+
+    // Hide banner if dismissed in this session
+    if (sessionStorage.getItem('janusPendingReviewBannerDismissed') === '1') {
+      document.addEventListener('DOMContentLoaded', function() {
+        var banner = document.getElementById('pendingReviewBanner');
+        if (banner) banner.style.display = 'none';
+      });
+    }
   </script>
 </body>
 </html>
