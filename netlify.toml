@@ -3,6 +3,16 @@
 
 # Uncomment below to add custom redirects
 # [[redirects]]
+#   from = "/"
+#   to = "/janus.html"
+#   status = 200
+
+[[redirects]]
+  from = "/janus"
+  to = "/janus.html"
+  status = 200
+
+# [[redirects]]
 #   from = "/old-path"
 #   to = "/new-path"
 #   status = 301 
