@@ -9,8 +9,8 @@
 
 [[redirects]]
   from = "/"
-  to = "/janus"
-  status = 301
+  to = "/tt.html"
+  status = 200
 
 [[redirects]]
   from = "/janus"

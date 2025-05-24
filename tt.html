@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading - Threshold Technologies</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .loading-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo {
+        position: absolute;
+        max-width: 400px;
+        max-height: 300px;
+        width: auto;
+        height: auto;
+        transition: all 0.8s ease-in-out;
+      }
+
+      .threshold-logo {
+        opacity: 1;
+        transform: scale(1);
+        animation: fadeInOut 4s ease-in-out forwards;
+      }
+
+      .janus-logo {
+        opacity: 0;
+        transform: scale(0.8);
+        animation: fadeInFromThreshold 4.5s ease-in-out 3.5s forwards;
+        cursor: pointer;
+        filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        25% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        75% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.1);
+        }
+      }
+
+      @keyframes fadeInFromThreshold {
+        0% {
+          opacity: 0;
+          transform: scale(0.8) rotate(-5deg);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+      }
+
+      .janus-logo:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.5));
+        transition: all 0.3s ease;
+      }
+
+      .janus-logo:active {
+        transform: scale(0.98);
+        transition: all 0.1s ease;
+      }
+
+      .loading-text {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #3b82f6;
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        opacity: 1;
+        animation: fadeOutText 4s ease-in-out forwards;
+      }
+
+      @keyframes fadeOutText {
+        0% {
+          opacity: 0;
+        }
+        25% {
+          opacity: 1;
+        }
+        75% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .background-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: #3b82f6;
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+        opacity: 0.4;
+      }
+
+      .particle:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+      }
+      .particle:nth-child(2) {
+        left: 20%;
+        animation-delay: 1s;
+      }
+      .particle:nth-child(3) {
+        left: 30%;
+        animation-delay: 2s;
+      }
+      .particle:nth-child(4) {
+        left: 40%;
+        animation-delay: 0.5s;
+      }
+      .particle:nth-child(5) {
+        left: 50%;
+        animation-delay: 1.5s;
+      }
+      .particle:nth-child(6) {
+        left: 60%;
+        animation-delay: 2.5s;
+      }
+      .particle:nth-child(7) {
+        left: 70%;
+        animation-delay: 3s;
+      }
+      .particle:nth-child(8) {
+        left: 80%;
+        animation-delay: 3.5s;
+      }
+      .particle:nth-child(9) {
+        left: 90%;
+        animation-delay: 4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.4;
+        }
+        90% {
+          opacity: 0.4;
+        }
+        50% {
+          transform: translateY(-10vh) rotate(180deg);
+          opacity: 0.8;
+        }
+      }
+
+      .interactive-hint {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #64748b;
+        font-size: 14px;
+        opacity: 0;
+        animation: showHint 1s ease-in-out 8s forwards;
+        text-align: center;
+      }
+
+      @keyframes showHint {
+        0% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo {
+          max-width: 300px;
+          max-height: 200px;
+        }
+        .loading-text {
+          font-size: 16px;
+        }
+        .interactive-hint {
+          font-size: 12px;
+          padding: 0 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading-container">
+      <div class="background-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+
+      <img
+        src="images/thresh.png"
+        alt="Threshold Technologies"
+        class="logo threshold-logo"
+        id="thresholdLogo"
+      />
+      <a href="/janus">
+        <img
+          src="images/logo.png"
+          alt="JANUS"
+          class="logo janus-logo"
+          id="janusLogo"
+        />
+      </a>
+
+      <div class="loading-text" id="loadingText">LOADING...</div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const janusLogo = document.getElementById("janusLogo");
+        const interactiveHint = document.getElementById("interactiveHint");
+
+        // Add click interaction to JANUS logo
+        janusLogo.addEventListener("click", function () {
+          // Create ripple effect
+          const ripple = document.createElement("div");
+          ripple.style.position = "absolute";
+          ripple.style.borderRadius = "50%";
+          ripple.style.background = "rgba(59, 130, 246, 0.6)";
+          ripple.style.transform = "scale(0)";
+          ripple.style.animation = "ripple 0.6s linear";
+          ripple.style.left = "50%";
+          ripple.style.top = "50%";
+          ripple.style.width = "100px";
+          ripple.style.height = "100px";
+          ripple.style.marginLeft = "-50px";
+          ripple.style.marginTop = "-50px";
+          ripple.style.pointerEvents = "none";
+
+          janusLogo.parentElement.appendChild(ripple);
+
+          // Add ripple animation
+          const style = document.createElement("style");
+          style.textContent = `
+            @keyframes ripple {
+              to {
+                transform: scale(4);
+                opacity: 0;
+              }
+            }
+          `;
+          document.head.appendChild(style);
+
+          // Remove ripple after animation
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+
+          // Hide hint after first interaction
+          interactiveHint.style.opacity = "0";
+
+          // Add some interactive feedback
+          console.log("JANUS logo clicked!");
+          // You can add more interactive functionality here
+        });
+
+        // Add keyboard interaction
+        document.addEventListener("keydown", function (event) {
+          if (event.code === "Space" || event.code === "Enter") {
+            janusLogo.click();
+          }
+        });
+
+        // Make logo focusable for accessibility
+        janusLogo.setAttribute("tabindex", "0");
+        janusLogo.setAttribute("role", "button");
+        janusLogo.setAttribute("aria-label", "Interactive JANUS logo");
+      });
+    </script>
+  </body>
+</html>
