@@ -8,6 +8,11 @@
 #   status = 200
 
 [[redirects]]
+  from = "/"
+  to = "/janus"
+  status = 301
+
+[[redirects]]
   from = "/janus"
   to = "/janus.html"
   status = 200
