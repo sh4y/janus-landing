@@ -117,6 +117,24 @@
       .janus-logo.pulsing {
         animation: pulse 1.2s infinite;
       }
+
+      .progress-bar-container {
+        width: 320px;
+        max-width: 80vw;
+        height: 8px;
+        background: rgba(59,130,246,0.10);
+        border-radius: 6px;
+        margin: 2.5rem auto 0 auto;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgba(59,130,246,0.10);
+      }
+      .progress-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+        border-radius: 6px;
+        transition: width 2s linear;
+      }
     </style>
   </head>
   <body>
@@ -134,6 +152,9 @@
         id="janusLogo"
       />
       <div class="loading-text" id="loadingText">Language Learning For Everyone</div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
     </div>
 
     <script>
@@ -145,7 +166,12 @@
         }, 4000);
         setTimeout(function () {
           window.location.href = '/janus';
-        }, 3000);
+        }, 2010);
+
+        // Animate progress bar and redirect after 3s
+        setTimeout(function() {
+          document.getElementById('progressBar').style.width = '100%';
+        }, 10);
       });
     </script>
   </body>
