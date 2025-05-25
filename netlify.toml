@@ -22,6 +22,11 @@
   to = "/blog.html"
   status = 200
 
+[[redirects]]
+  from = "/pay"
+  to = "https://buy.stripe.com/9B64gz2Q8d2a7WueCo57W01"
+  status = 302
+
 # [[redirects]]
 #   from = "/old-path"
 #   to = "/new-path"
