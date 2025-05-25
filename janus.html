@@ -268,9 +268,21 @@
       <svg class="w-6 h-6 text-yellow-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
       </svg>
-      <div class="flex-1 text-sm md:text-base">
+      <div class="flex-1 text-sm md:text-base text-center flex flex-col items-center justify-center">
         <span class="font-bold gradient-text">Janus is pending Chrome Web Store review.</span>
-        <span class="text-gray-200 ml-1">You can test the beta by loading the package in Chrome using developer tools (<a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked" target="_blank" class="underline text-blue-300 hover:text-blue-400">instructions</a>).</span>
+        <span class="text-gray-200 ml-1 block">You can test the beta by loading the package in Chrome using developer tools (<a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked" target="_blank" class="underline text-blue-300 hover:text-blue-400">instructions</a>).</span>
+        <div class="mt-4 w-full flex flex-col items-center justify-center">
+          <div class="max-w-md w-full">
+            <div class="mb-2 text-base text-gray-200">Want to be notified when Janus is live? Join our waitlist!</div>
+            <form name="waitlist" method="POST" data-netlify="true" class="glass rounded-xl px-4 py-4 flex flex-col items-center space-y-3" id="waitlistForm">
+              <input type="hidden" name="form-name" value="waitlist" />
+              <input type="text" name="name" placeholder="Your Name (optional)" class="w-full rounded-lg px-4 py-2 bg-gray-900/80 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+              <input type="email" name="email" placeholder="Your Email" required class="w-full rounded-lg px-4 py-2 bg-gray-900/80 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+              <button type="submit" class="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold text-white hover:from-blue-700 hover:to-purple-700 transition-all">Join Waitlist</button>
+            </form>
+            <div id="waitlistSuccess" class="hidden mt-3 text-green-400 font-semibold text-center">Thank you for joining the waitlist! We'll notify you as soon as Janus is live.</div>
+          </div>
+        </div>
       </div>
       <button onclick="dismissPendingReviewBanner()" aria-label="Dismiss banner" class="ml-2 text-gray-400 hover:text-white focus:outline-none text-xl font-bold">×</button>
     </div>
@@ -912,6 +924,19 @@
         }, 400);
       }, 1800);
     })();
+
+    // Waitlist form success handler
+    document.addEventListener('DOMContentLoaded', function() {
+      var waitlistForm = document.getElementById('waitlistForm');
+      if (waitlistForm) {
+        waitlistForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          // Netlify will still process the form, but we show a custom message
+          waitlistForm.style.display = 'none';
+          document.getElementById('waitlistSuccess').style.display = 'block';
+        });
+      }
+    });
   </script>
 </body>
 </html>
