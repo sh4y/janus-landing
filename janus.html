@@ -185,7 +185,7 @@
 <body class="text-white overflow-x-hidden">
   
   <!-- Navigation -->
-  <nav class="w-full glass">
+  <nav class="w-full glass hidden md:block">
     <div class="max-w-7xl mx-auto px-2 py-2">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
@@ -682,13 +682,6 @@
   </div>
 
   <script>
-    // Mobile menu functions
-    function toggleMobileMenu(event) {
-      if (event) event.stopPropagation();
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('open');
-    }
-
     // FAQ functions
     function toggleFAQ(element) {
       const content = element.querySelector('.faq-content');
@@ -810,7 +803,7 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         // Close mobile menu
-        document.getElementById('mobileMenu').classList.remove('open');
+        // document.getElementById('mobileMenu').classList.remove('open');
         // Close demo modal
         closeDemoModal();
       }
