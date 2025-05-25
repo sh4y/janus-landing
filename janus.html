@@ -130,7 +130,7 @@
 <body class="text-white overflow-x-hidden">
   
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 glass">
+  <nav class="w-full glass">
     <div class="max-w-7xl mx-auto px-2 py-2">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
@@ -146,6 +146,7 @@
           <a href="#pricing" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-purple-500/20 hover:text-purple-300 transition-all focus:outline-none focus:ring-2 focus:ring-purple-400">Pricing</a>
           <a href="#faq" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-green-500/20 hover:text-green-300 transition-all focus:outline-none focus:ring-2 focus:ring-green-400">FAQ</a>
           <a href="blog.html" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-yellow-500/20 hover:text-yellow-300 transition-all focus:outline-none focus:ring-2 focus:ring-yellow-400">Blog</a>
+          <a href="privacy.html" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-gray-500/20 hover:text-gray-300 transition-all focus:outline-none focus:ring-2 focus:ring-gray-400">Privacy</a>
           <a href="#" onclick="downloadAndRedirect(event)" class="px-7 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-bold shadow-lg hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400">Download Now</a>
         </div>
         
@@ -173,6 +174,7 @@
           <a href="#features" class="block w-full px-5 py-3 rounded-full glass text-white font-semibold shadow-md hover:bg-blue-500/20 hover:text-blue-300 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 text-center" onclick="toggleMobileMenu(event)">Features</a>
           <a href="#pricing" class="block w-full px-5 py-3 rounded-full glass text-white font-semibold shadow-md hover:bg-purple-500/20 hover:text-purple-300 transition-all focus:outline-none focus:ring-2 focus:ring-purple-400 text-center" onclick="toggleMobileMenu(event)">Pricing</a>
           <a href="#faq" class="block w-full px-5 py-3 rounded-full glass text-white font-semibold shadow-md hover:bg-green-500/20 hover:text-green-300 transition-all focus:outline-none focus:ring-2 focus:ring-green-400 text-center" onclick="toggleMobileMenu(event)">FAQ</a>
+          <a href="privacy.html" class="block w-full px-5 py-3 rounded-full glass text-white font-semibold shadow-md hover:bg-gray-500/20 hover:text-gray-300 transition-all focus:outline-none focus:ring-2 focus:ring-gray-400 text-center" onclick="toggleMobileMenu(event)">Privacy</a>
           <a href="#" onclick="downloadAndRedirect(event)" class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold text-lg shadow-lg hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 mt-2" onclick="toggleMobileMenu(event)">Download Now</a>
         </nav>
       </div>
@@ -226,6 +228,8 @@
       </div>
       <div class="text-sm text-gray-400 mb-2 text-center">
         🔒 No credit card required • ⚡ Install in seconds • 🌍 Works on any website
+        <br>
+        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-green-700/80 text-green-200 font-semibold text-xs align-middle">Privacy-first: Your learning is your business. We never collect personal data.</span>
       </div>
     </div>
     <div class="absolute top-1/4 left-10 w-16 h-16 rounded-full bg-blue-500/20 floating"></div>
@@ -327,7 +331,7 @@
             🔒
           </div>
           <h3 class="text-xl font-bold mb-4">Privacy First</h3>
-          <p class="text-gray-300">Your browsing data stays private. We only process text for translations.</p>
+          <p class="text-gray-300">Your browsing data stays private. We only process text for translations, and never store or link it to you.</p>
         </div>
         
         <div class="glass-strong rounded-3xl p-8 card-hover">
@@ -335,7 +339,7 @@
             📊
           </div>
           <h3 class="text-xl font-bold mb-4">Progress Tracking</h3>
-          <p class="text-gray-300">Opt-in analytics show your vocabulary growth and learning patterns.</p>
+          <p class="text-gray-300">Opt-in analytics show your vocabulary growth and learning patterns. Only if you choose premium and opt in, and never linked to your identity.</p>
         </div>
         
         <div class="glass-strong rounded-3xl p-8 card-hover">
@@ -383,24 +387,24 @@
         </h2>
         <p class="text-xl text-gray-300">Choose the plan that fits your learning journey</p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <!-- Free Plan -->
-        <div class="glass-strong rounded-3xl p-6 card-hover flex flex-col justify-between">
+        <div class="glass-strong rounded-3xl p-6 card-hover flex flex-col justify-between max-w-xl mx-auto">
           <div>
             <h3 class="text-2xl font-bold mb-2 text-center">Free Explorer</h3>
             <div class="text-4xl font-black mb-2 text-center">$0<span class="text-lg text-gray-400">/month</span></div>
             <p class="text-gray-300 text-center mb-4">Perfect for trying out Janus</p>
-            <ul class="space-y-2 mb-4">
+            <ul class="space-y-2 mb-4 text-sm">
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+                <div class="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
                 <span>Unlimited smart word translations</span>
               </li>
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+                <div class="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
                 <span>All languages supported</span>
               </li>
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+                <div class="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
                 <span>Privacy protection</span>
               </li>
             </ul>
@@ -410,26 +414,26 @@
           </button>
         </div>
         <!-- Premium Plan -->
-        <div class="glass-strong rounded-3xl p-6 card-hover flex flex-col justify-between relative overflow-hidden">
+        <div class="glass-strong rounded-3xl p-6 card-hover flex flex-col justify-between relative overflow-hidden border-2 border-yellow-400 shadow-xl max-w-xl mx-auto" style="box-shadow: 0 0 0 4px rgba(251,191,36,0.15);">
           <div>
             <h3 class="text-2xl font-bold mb-2 text-center">Premium</h3>
             <div class="text-4xl font-black mb-2 text-center">$4<span class="text-lg text-gray-400">/month</span></div>
             <p class="text-gray-300 text-center mb-4">For serious language learners looking to supplement their learning</p>
-            <ul class="space-y-2 mb-4">
+            <ul class="space-y-2 mb-4 text-sm">
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+                <div class="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
                 <span>Context driven AI-powered word selection</span>
               </li>
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+                <div class="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
                 <span>Opt-in progress analytics and personalized insights</span>
               </li>
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+                <div class="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
                 <span>Difficulty customization</span>
               </li>
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
+                <div class="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-xs">✓</div>
                 <span>Priority support</span>
               </li>
             </ul>
@@ -439,25 +443,25 @@
           </button>
         </div>
         <!-- Professional Plan -->
-        <div class="glass-strong rounded-3xl p-6 card-hover flex flex-col justify-between relative overflow-hidden border-2 border-yellow-400 shadow-xl" style="box-shadow: 0 0 0 4px rgba(251,191,36,0.15);">
+        <div class="glass-strong rounded-3xl p-6 card-hover flex flex-col justify-between relative overflow-hidden border-2 border-yellow-300 shadow max-w-xl mx-auto" style="box-shadow: 0 0 0 2px rgba(251,191,36,0.10);">
           <div>
             <h3 class="text-2xl font-bold mb-2 text-center text-yellow-400">Professional</h3>
             <p class="text-gray-300 text-center mb-4">For businesses and corporate packages</p>
-            <ul class="space-y-2 mb-4">
+            <ul class="space-y-2 mb-4 text-sm">
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-xs text-black font-bold">★</div>
+                <div class="w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center text-xs text-black font-bold">★</div>
                 <span>Complex AI focusing on business relevant vocabulary</span>
               </li>
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-xs text-black font-bold">★</div>
+                <div class="w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center text-xs text-black font-bold">★</div>
                 <span>Custom unpacked extension can also be provided to corporate IT for image preloading</span>
               </li>
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-xs text-black font-bold">★</div>
+                <div class="w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center text-xs text-black font-bold">★</div>
                 <span>Swappable between the user's or the company's devices</span>
               </li>
               <li class="flex items-center space-x-3">
-                <div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-xs text-black font-bold">★</div>
+                <div class="w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center text-xs text-black font-bold">★</div>
                 <span>Invoicable in most countries with modifiable VAT invoicee</span>
               </li>
             </ul>
@@ -512,7 +516,7 @@
             </svg>
           </div>
           <div class="faq-content mt-4 text-gray-300 hidden">
-            <p>Absolutely. We only process the minimal text needed for translations and never store your browsing history or personal information.</p>
+            <p>Absolutely. We only process the minimal text needed for translations and never store your browsing history or personal information. All data is routed and parsed exclusively through private servers hosted on Microsoft infrastructure, with strict agreements preventing anyone (including Microsoft) from viewing your data. Your privacy is our promise.</p>
           </div>
         </div>
         
@@ -605,6 +609,7 @@
         <div class="col-span-2">
           <p class="text-gray-400 mb-6">
             Learn languages naturally while browsing the web. Transform every website into your personal language classroom.
+            <span class="block mt-2 text-green-300 font-semibold">Your privacy is our promise. <a href="privacy.html" class="underline text-blue-300 hover:text-blue-400">Read our full policy</a>.</span>
           </p>
           <div class="mt-4 text-xs text-gray-500">Janus is a product of ThresholdTechnologies</div>
         </div>
