@@ -127,36 +127,25 @@
         class="logo threshold-logo"
         id="thresholdLogo"
       />
-      <a href="/janus" id="janusLogoLink" class="hidden" tabindex="0" role="button" aria-label="Go to Janus" title="Go to Janus">
-        <img
-          src="images/logo.png"
-          alt="JANUS"
-          class="logo janus-logo"
-          id="janusLogo"
-        />
-      </a>
-      <div class="loading-text" id="loadingText">LOADING...</div>
+      <img
+        src="images/logo.png"
+        alt="JANUS"
+        class="logo janus-logo hidden"
+        id="janusLogo"
+      />
+      <div class="loading-text" id="loadingText">Language Learning For Every Day People</div>
     </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
           document.getElementById("thresholdLogo").classList.add("hidden");
-          var janus = document.getElementById("janusLogoLink");
           var janusImg = document.getElementById("janusLogo");
-          janus.classList.remove("hidden");
-          setTimeout(function() {
-            janus.classList.add("visible");
-            janusImg.classList.add("pulsing");
-            // Auto-redirect after 5s if not clicked
-            var autoRedirect = setTimeout(function() {
-              window.location.href = '/janus';
-            }, 5000);
-            // Cancel auto-redirect if user clicks/taps
-            janus.addEventListener('click', function() { clearTimeout(autoRedirect); });
-            janus.addEventListener('touchstart', function() { clearTimeout(autoRedirect); });
-          }, 10);
+          janusImg.classList.remove("hidden");
         }, 4000);
+        setTimeout(function () {
+          window.location.href = '/janus';
+        }, 3000);
       });
     </script>
   </body>
