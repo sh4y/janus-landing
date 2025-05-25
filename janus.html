@@ -53,9 +53,13 @@
     }
   </script>
   <style>
+    html {
+      overflow-x: hidden;
+    }
     body {
       background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
       background-attachment: fixed;
+      touch-action: pan-y;
     }
     .glass {
       backdrop-filter: blur(16px);
