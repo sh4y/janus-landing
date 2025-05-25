@@ -286,7 +286,7 @@
       </div>
     </div>
   </div>
-
+ 
   <!-- How It Works -->
   <section class="py-16 relative">
     <div class="max-w-7xl mx-auto px-6">
@@ -909,19 +909,6 @@
         }, 400);
       }, 1800);
     })();
-
-    // Waitlist form success handler
-    document.addEventListener('DOMContentLoaded', function() {
-      var waitlistForm = document.getElementById('waitlistForm');
-      if (waitlistForm) {
-        waitlistForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          // Netlify will still process the form, but we show a custom message
-          waitlistForm.style.display = 'none';
-          document.getElementById('waitlistSuccess').style.display = 'block';
-        });
-      }
-    });
   </script>
 </body>
 </html>
