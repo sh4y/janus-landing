@@ -284,7 +284,6 @@
           </div>
         </div>
       </div>
-      <button onclick="dismissPendingReviewBanner()" aria-label="Dismiss banner" class="ml-2 text-gray-400 hover:text-white focus:outline-none text-xl font-bold">×</button>
     </div>
   </div>
 
@@ -838,20 +837,6 @@
         progressFill.style.width = '0%';
       });
     });
-
-    // Dismiss pending review banner for session
-    function dismissPendingReviewBanner() {
-      document.getElementById('pendingReviewBanner').style.display = 'none';
-      sessionStorage.setItem('janusPendingReviewBannerDismissed', '1');
-    }
-
-    // Hide banner if dismissed in this session
-    if (sessionStorage.getItem('janusPendingReviewBannerDismissed') === '1') {
-      document.addEventListener('DOMContentLoaded', function() {
-        var banner = document.getElementById('pendingReviewBanner');
-        if (banner) banner.style.display = 'none';
-      });
-    }
 
     // Gallery collapsible logic
     const galleryToggle = document.getElementById('galleryToggle');
