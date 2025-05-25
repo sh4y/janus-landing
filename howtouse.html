@@ -58,11 +58,23 @@
           <div>Janus will now appear in your Chrome extensions. Pin it for easy access!</div>
         </li>
       </ol>
+      <button id="downloadJanusBtn" class="w-full mb-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold text-white shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg">Download Janus Extension ZIP</button>
       <div class="text-sm text-gray-400 mb-4">
         Need more help? See the <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked" target="_blank" class="underline text-blue-300 hover:text-blue-400">official Chrome guide</a>.
       </div>
       <a href="/janus" class="inline-block mt-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold text-white shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400">Back to Janus</a>
     </div>
   </main>
+  <script>
+    // Download ZIP only when button is clicked
+    document.getElementById('downloadJanusBtn').addEventListener('click', function() {
+      const link = document.createElement('a');
+      link.href = 'janus-chrome-extension.zip';
+      link.download = '';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
 </body>
 </html> 
