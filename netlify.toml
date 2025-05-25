@@ -24,7 +24,7 @@
 
 [[redirects]]
   from = "/pay"
-  to = "https://buy.stripe.com/test_9B66oJ0zp4pR1t4eM52VG00"
+  to = "https://buy.stripe.com/9B64gz2Q8d2a7WueCo57W01"
   status = 302
 
 # [[redirects]]
