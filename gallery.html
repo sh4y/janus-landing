@@ -3,44 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery – Janus</title>
-  <meta name="description" content="Janus Gallery: See screenshots and visuals of Janus in action.">
+  <title>Janus Gallery – Language Learning Chrome Extension Screenshots & Features</title>
+  <meta name="description" content="Gallery of Janus Chrome Extension for language learning. See screenshots, features, and UI for passive vocabulary acquisition, AI-powered immersion, and multilingual browsing.">
+  <meta name="keywords" content="Janus gallery, language learning screenshots, Chrome extension images, vocabulary immersion, AI language learning, multilingual extension, browser extension gallery, Janus features, UI, passive learning, language acquisition">
+  <link rel="canonical" href="https://threshold.technology/gallery" />
+  <meta property="og:title" content="Janus Gallery – Language Learning Chrome Extension Screenshots & Features" />
+  <meta property="og:description" content="Gallery of Janus Chrome Extension for language learning. See screenshots, features, and UI for passive vocabulary acquisition, AI-powered immersion, and multilingual browsing." />
+  <meta property="og:image" content="https://threshold.technology/images/logo-cropped.png" />
+  <meta property="og:url" content="https://threshold.technology/gallery" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Janus Gallery – Language Learning Chrome Extension Screenshots & Features" />
+  <meta name="twitter:description" content="Gallery of Janus Chrome Extension for language learning. See screenshots, features, and UI for passive vocabulary acquisition, AI-powered immersion, and multilingual browsing." />
+  <meta name="twitter:image" content="https://threshold.technology/images/logo-cropped.png" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { overflow-x: hidden; }
+    body {
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
+      background-attachment: fixed;
+      touch-action: pan-y;
+    }
+    .glass {
+      backdrop-filter: blur(16px);
+      background: rgba(30, 30, 60, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .glass-strong {
+      backdrop-filter: blur(20px);
+      background: rgba(15, 15, 35, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white min-h-screen">
-  <nav class="w-full glass py-4 px-6 flex justify-between items-center">
-    <a href="janus.html" class="text-lg font-bold gradient-text">← Back to Main</a>
-    <span class="text-xl font-semibold">Gallery</span>
-  </nav>
-  <main class="max-w-3xl mx-auto px-4 py-12">
-    <h1 class="text-4xl md:text-5xl font-bold mb-10 text-center gradient-text">Gallery</h1>
-    <div class="flex flex-col gap-16">
-      <!-- Add new images here. Each block is an image + text/SEO area. Duplicate as needed. -->
-      <figure class="w-full">
-        <img src="images/2.png" alt="Janus Screenshot 2" class="w-full h-auto rounded-2xl object-contain shadow-lg" />
-        <figcaption class="mt-6 text-base text-gray-300 min-h-[2.5em]">
-          Janus Chrome extension in action: seamlessly translating English words into Spanish on a live news website. Effortless language immersion and vocabulary building for language learners, right in your browser.
-        </figcaption>
-      </figure>
-      <figure class="w-full">
-        <img src="images/3.png" alt="Janus Screenshot 3" class="w-full h-auto rounded-2xl object-contain shadow-lg" />
-        <figcaption class="mt-6 text-base text-gray-300 min-h-[2.5em]">
-          Personalized vocabulary highlights: Janus intelligently selects relevant words based on your learning level, making language acquisition natural and contextual while you browse your favorite websites.
-        </figcaption>
-      </figure>
-      <figure class="w-full">
-        <img src="images/4.png" alt="Janus Screenshot 4" class="w-full h-auto rounded-2xl object-contain shadow-lg" />
-        <figcaption class="mt-6 text-base text-gray-300 min-h-[2.5em]">
-          Janus learns from your interests: it will highlight words that are relevant to topics that are near and dear to you.
-        </figcaption>
-      </figure>
-      <!-- Example:
-      <figure class="w-full">
-        <img src="images/NEW.png" alt="Description" class="w-full h-auto rounded-2xl object-contain shadow-lg" />
-        <figcaption class="mt-6 text-base text-gray-300 min-h-[2.5em]">Add SEO keywords or description here</figcaption>
-      </figure>
-      -->
+<body class="text-white overflow-x-hidden">
+  <!-- Navigation -->
+  <nav class="w-full glass">
+    <div class="max-w-7xl mx-auto px-2 py-2">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <a href="https://threshold.technology" aria-label="ThresholdTechnologies Home" class="flex items-center">
+            <img src="images/thresh.png" alt="ThresholdTechnologies Logo" class="w-20 h-20" />
+          </a>
+        </div>
+        <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 w-full md:w-auto mt-2 md:mt-0">
+          <a href="janus.html" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-blue-500/20 hover:text-blue-300 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:w-auto text-center">Home</a>
+        </div>
+      </div>
     </div>
-  </main>
+  </nav>
+  <section class="py-16 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-5xl font-black mb-12 text-center gradient-text">Janus Gallery</h1>
+      <div class="flex flex-col gap-16">
+        <!-- Gallery Item Example: Copy and edit this block to add more images -->
+        <div class="glass-strong rounded-3xl p-6 flex flex-col items-center">
+          <img src="images/2.png" alt="Janus Chrome Extension on News Site" class="w-full max-w-2xl object-contain rounded-2xl shadow-xl mb-6" />
+          <div class="text-lg text-gray-200 text-center max-w-2xl">
+            <strong>Janus Chrome Extension on News Site:</strong> This screenshot shows Janus in action, translating select words on a real news website for passive language learning, vocabulary immersion, and contextual acquisition. Perfect for users seeking AI-powered multilingual browsing and seamless language education.
+          </div>
+        </div>
+        <div class="glass-strong rounded-3xl p-6 flex flex-col items-center">
+          <img src="images/3.png" alt="Vocabulary Analytics Dashboard" class="w-full max-w-2xl object-contain rounded-2xl shadow-xl mb-6" />
+          <div class="text-lg text-gray-200 text-center max-w-2xl">
+            <strong>Vocabulary Analytics Dashboard:</strong> The analytics dashboard provides insights into your vocabulary growth, learning patterns, and language progress. Ideal for tracking passive learning, AI-driven word selection, and personalized language acquisition.
+          </div>
+        </div>
+        <div class="glass-strong rounded-3xl p-6 flex flex-col items-center">
+          <img src="images/4.png" alt="Janus Extension Settings" class="w-full max-w-2xl object-contain rounded-2xl shadow-xl mb-6" />
+          <div class="text-lg text-gray-200 text-center max-w-2xl">
+            <strong>Janus Extension Settings:</strong> Easily customize your language learning experience with Janus settings. Adjust translation frequency, select target languages, and enable privacy-first features for a tailored, secure, and effective multilingual browsing journey.
+          </div>
+        </div>
+        <!-- To add more images, copy the block above and update the src, alt, and description. -->
+      </div>
+    </div>
+  </section>
 </body>
 </html> 
