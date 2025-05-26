@@ -205,11 +205,17 @@
           <a href="#faq" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-green-500/20 hover:text-green-300 transition-all focus:outline-none focus:ring-2 focus:ring-green-400 w-full md:w-auto text-center">FAQ</a>
           <a href="blog.html" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-yellow-500/20 hover:text-yellow-300 transition-all focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full md:w-auto text-center">Blog</a>
           <a href="privacy.html" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-gray-500/20 hover:text-gray-300 transition-all focus:outline-none focus:ring-2 focus:ring-gray-400 w-full md:w-auto text-center">Privacy</a>
+          <a href="gallery.html" class="px-5 py-2 rounded-full glass text-white font-semibold shadow-md hover:bg-pink-500/20 hover:text-pink-300 transition-all focus:outline-none focus:ring-2 focus:ring-pink-400 w-full md:w-auto text-center">Gallery</a>
           <a href="#" onclick="downloadAndRedirect(event)" class="px-7 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg font-bold shadow-lg hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:w-auto text-center">Download Now</a>
         </div>
       </div>
     </div>
   </nav>
+
+  <!-- Add a heading to the main page below navigation -->
+  <header class="max-w-7xl mx-auto px-6 py-8 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold gradient-text">Janus: Learn Languages While You Browse</h1>
+  </header>
 
   <!-- Hero Section -->
   <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-8">
@@ -387,31 +393,6 @@
           </div>
           <h3 class="text-xl font-bold mb-4">Multiple Languages</h3>
           <p class="text-gray-300">Support for dozens of languages with more being added regularly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Section (collapsible) -->
-  <section class="py-12" id="gallery">
-    <div class="max-w-5xl mx-auto px-6">
-      <button id="galleryToggle" class="w-full flex items-center justify-between px-6 py-4 glass-strong rounded-2xl text-2xl font-bold gradient-text focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4" aria-expanded="false" aria-controls="galleryContent">
-        <span>Gallery</span>
-        <svg id="galleryChevron" class="w-7 h-7 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div id="galleryContent" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" aria-hidden="true">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="flex flex-col items-center justify-center overflow-visible relative">
-            <img src="images/2.png" alt="Janus Screenshot 2" class="rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out" />
-          </div>
-          <div class="flex flex-col items-center justify-center overflow-visible relative">
-            <img src="images/3.png" alt="Janus Screenshot 3" class="rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out" />
-          </div>
-          <div class="flex flex-col items-center justify-center overflow-visible relative">
-            <img src="images/4.png" alt="Janus Screenshot 4" class="rounded-2xl object-contain w-full max-w-xs h-64 shadow-lg transition-transform duration-300 ease-in-out" />
-          </div>
         </div>
       </div>
     </div>
@@ -650,7 +631,6 @@
             Learn languages naturally while browsing the web. Transform every website into your personal language classroom.
             <span class="block mt-2 text-green-300 font-semibold">Your privacy is our promise. <a href="privacy.html" class="underline text-blue-300 hover:text-blue-400">Read our full policy</a>.</span>
           </p>
-          <div class="mt-4 text-xs text-gray-500">Janus is a product of ThresholdTechnologies</div>
         </div>
       </div>
       
