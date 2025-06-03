@@ -55,190 +55,37 @@
     <img src="images/logo-cropped.png" alt="Janus Logo" class="w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-lg transition-transform duration-200 group-hover:scale-105 group-active:scale-95 bg-white/10" />
   </a>
   <!-- Blog Content Section -->
-  <main class="max-w-3xl mx-auto px-6 py-8 space-y-12" id="blog">
+  <main class="max-w-4xl mx-auto px-6 py-8" id="blog">
     <h1 class="text-4xl font-bold mb-10 gradient-text">Janus Blog</h1>
-    <!-- Blog Post Accordion -->
-    <section>
-      <!-- Blog Post 1 (expanded by default) -->
-      <div class="mb-12">
-        <h2 class="text-2xl font-bold mb-4 gradient-text">Learn a Language Without Studying: How Janus Enables Passive Learning</h2>
-        <button type="button" class="w-full flex items-center justify-between px-6 py-4 glass-strong rounded-2xl text-xl font-bold gradient-text focus:outline-none focus:ring-2 focus:ring-blue-400 mb-6 transition-all" aria-expanded="true" aria-controls="post1Content" id="post1Toggle">
-          <span class="sr-only">Expand post: Learn a Language Without Studying: How Janus Enables Passive Learning</span>
-          <svg class="w-6 h-6 ml-2 transition-transform duration-300 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div id="post1Content" class="max-h-[3000px] overflow-hidden transition-all duration-500 ease-in-out glass-strong rounded-2xl p-8 space-y-6" aria-hidden="false">
-          <div class="text-gray-400 text-sm mb-4">Posted on June 1, 2024 by The Janus Team</div>
-          <article class="prose prose-invert prose-lg max-w-none text-gray-200 space-y-6">
-            <h3>Learning While You Live Your Life</h3>
-            <p>The beauty of Janus is that it hijacks something you're already doing. You're going to read stuff online anyway, so why not make it educational? The extension sprinkles foreign words throughout the pages you visit. You might see <em>gracias</em> instead of "thank you" in an article, or <em>bonjour</em> replacing "hello" in a comment thread.</p>
-
-            <p>The crazy part? You still understand everything. Your brain fills in the gaps using context clues, but those foreign words start sticking around in your memory. It's like having a really patient language teacher who follows you around the internet.</p>
-
-            <p>I've been using it to learn Portuguese, and last week I caught myself understanding a conversation at a Brazilian restaurant without even thinking about it. Those little word swaps had been building up in my head for months.</p>
-
-            <h3>Why This Actually Works Better Than Flashcards</h3>
-            
-            <p>Remember cramming vocabulary lists in school? You'd memorize 50 words, ace the test, then forget half of them by next week. That's because isolated words are boring to your brain – there's nothing to hook them to.</p>
-
-            <p>When you see a word in context, though, your brain creates a whole story around it. Reading "I need to buy 牛奶 for breakfast" teaches you that 牛奶 means milk, but it also connects it to morning routines, grocery shopping, maybe even the specific article you were reading about healthy habits.</p>
-
-            <p>Context is everything. It's why kids don't learn their first language through flashcards – they pick it up from hearing it used in real situations, over and over again. Janus recreates that natural learning process in your second language.</p>
-
-            <h3>Perfect for People Who Don't Have Time to Study</h3>
-
-            <p>Let's be honest – most of us start learning languages with good intentions, then life gets in the way. Work gets busy, kids need attention, Netflix has a new season of that show you're watching. Traditional language learning demands you show up consistently, and that's where most people fail.</p>
-
-            <p>But you're going to browse the internet anyway. Might as well make it count for something. With Janus, even your procrastination becomes productive. Scrolling through Reddit for an hour? Congratulations, you just had an hour of Spanish immersion.</p>
-
-            <p>I love that there's no pressure with this approach. Some days you'll notice the foreign words more than others, and that's fine. The repetition happens naturally as you encounter the same words across different websites and contexts.</p>
-
-            <h3>The Compound Effect of Small Exposures</h3>
-
-            <p>Here's what surprised me most about using Janus: the learning happens so gradually that you don't really notice it. Then one day you're reading something and realize you understood a whole sentence in another language without translating it in your head first.</p>
-
-            <p>It's like how you learned to recognize your friends' cars or voices – not through deliberate study, but through repeated casual exposure. Your brain is incredible at pattern recognition when you give it enough examples.</p>
-
-            <p>The compound effect is real. Each small exposure builds on the last one. After a few weeks, words that were foreign start feeling familiar. After a few months, you're recognizing them instantly. It's not dramatic day-to-day progress, but the cumulative effect is pretty amazing.</p>
-
-            <h3>Give It a Try</h3>
-
-            <p>If you've been putting off learning a language because you "don't have time," this might be exactly what you need. Install Janus from the Chrome Web Store and pick a language you're curious about. Then just... browse the internet like normal.</p>
-
-            <p>No pressure, no schedules, no guilt if you miss a day. Just let the learning happen in the background while you live your digital life. Your future self will thank you when you suddenly understand that foreign movie without subtitles.</p>
-          </article>
-        </div>
+    <!-- Blog Post List -->
+    <div id="blogList" class="grid gap-6 md:grid-cols-2">
+      <!-- Blog Post Preview Cards -->
+      <div class="blog-card glass-strong rounded-2xl p-6 cursor-pointer transition hover:scale-105" data-post="5">
+        <h2 class="text-xl font-bold gradient-text mb-2">TF–IDF: Finding the Most Important Words</h2>
+        <div class="text-gray-400 text-xs mb-2">01/06/2025</div>
+        <p class="text-gray-300">A simple, powerful way to find what makes your article unique. Learn how TF–IDF works and why it matters for search, tagging, and text analysis.</p>
       </div>
-      <!-- Blog Post 2: Repetitive Immersion -->
-      <div class="mb-12">
-        <button type="button" class="w-full flex items-center justify-between px-6 py-4 glass-strong rounded-2xl text-xl font-bold gradient-text focus:outline-none focus:ring-2 focus:ring-blue-400 mb-6 transition-all" aria-expanded="false" aria-controls="post2Content" id="post2Toggle">
-          <span>Why Seeing the Same Word 20 Times Beats Studying It Once</span>
-          <svg class="w-6 h-6 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div id="post2Content" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out glass-strong rounded-2xl p-8 space-y-6" aria-hidden="true">
-          <div class="text-gray-400 text-sm mb-4">Last updated: 25 May 2025</div>
-          <article class="prose prose-invert prose-lg max-w-none text-gray-200 space-y-6">
-            <p><strong>Quick version:</strong> Your brain learns words better through repeated casual encounters than intensive study sessions. Here's why that matters and how to use it.</p>
-            
-            <h3>The Magic Number: 5-10 Exposures</h3>
-            
-            <p>Ever wonder why some words stick effortlessly while others slip away no matter how hard you try to memorize them? It comes down to repetition, but not the kind you think.</p>
-
-            <p>Research shows that most people need to encounter a new word about 5-10 times in different contexts before it really sticks. Not five times in a row during a study session – five separate encounters spread across days or weeks, each time in a slightly different situation.</p>
-
-            <p>Think about how you learned words like "spam" (the email kind, not the meat). You probably didn't sit down and study its definition. Instead, you saw it mentioned in articles, heard friends complain about it, noticed it in your email settings. Each casual encounter reinforced the meaning until it became automatic.</p>
-
-            <h3>Your Brain on Repetition</h3>
-
-            <p>When you encounter a word repeatedly, your brain physically changes. Each exposure strengthens the neural pathways associated with that word, like water carving deeper grooves in rock. Scientists call this "memory consolidation," but I think of it as your brain building highways to information it uses often.</p>
-
-            <p>The beautiful thing about this process is that it happens automatically. You don't have to consciously decide to remember something – if you see it enough times in meaningful contexts, your brain files it away in long-term storage.</p>
-
-            <p>This is why cramming doesn't work for language learning. Sure, you might remember 100 vocabulary words long enough to pass a test, but without repeated exposure in varied contexts, most of them fade within weeks.</p>
-
-            <h3>Context Changes Everything</h3>
-
-            <p>Here's where it gets interesting: each time you encounter a word in a new context, you learn something additional about it. Maybe the first time you see "banco" it's in a sentence about going to the bank. The second time it's in a travel blog about sitting on a park bench (because banco means both bank and bench in Spanish).</p>
-
-            <p>Each context adds depth to your understanding. You're not just learning definitions – you're learning how words behave in the wild. This is why people who learn languages through immersion often have more natural-sounding speech than those who learned through textbooks.</p>
-
-            <h3>Making Repetition Happen Naturally</h3>
-
-            <p>The trick is engineering these repeated exposures without it feeling like work. Here are some ways to do it:</p>
-
-            <p><strong>Layer it onto existing habits.</strong> If you read news every morning, use a tool that translates some words in your articles. If you're a podcast person, try listening to the same episode twice – once with English subtitles, once with your target language.</p>
-
-            <p><strong>Embrace the scatter-shot approach.</strong> Don't worry about learning words in any particular order. Let your interests guide you. If you're into cooking, you'll naturally encounter food vocabulary repeatedly across different recipes and food blogs.</p>
-
-            <p><strong>Mix up the mediums.</strong> See a word in text, hear it in audio, maybe even try using it in conversation. Each mode of exposure creates different neural pathways, making the word more accessible to recall later.</p>
-
-            <h3>Tools That Do the Heavy Lifting</h3>
-
-            <p>You could try to create these repeated exposures manually, but honestly, who has time for that? This is where technology becomes your friend. Browser extensions like Janus automatically create those 5-10 contextual encounters by swapping words on websites you visit regularly.</p>
-
-            <p>Language learning apps with spaced repetition (like Anki) can work too, but they require more active participation. The beauty of passive tools is that the repetition happens whether you're thinking about language learning or not.</p>
-
-            <p>Some people create playlists of foreign songs and let them play in the background while working. Others change their phone's language settings temporarily. The key is finding systems that work with your lifestyle, not against it.</p>
-
-            <h3>Signs It's Working</h3>
-
-            <p>You'll know this approach is working when you start recognizing words before you consciously remember their meaning. It's that tip-of-the-tongue feeling, but in reverse – you know you know the word, even if you can't immediately access its translation.</p>
-
-            <p>Another good sign is when you understand sentences with foreign words without mentally translating each piece. Your brain starts processing the foreign words as naturally as English ones.</p>
-
-            <p>Don't expect dramatic daily progress. This is more like watching a plant grow – barely noticeable day-to-day, but unmistakable over weeks and months.</p>
-
-            <h3>Common Questions</h3>
-
-            <p><strong>Will this make me fluent?</strong> Not by itself. Repetitive exposure is fantastic for vocabulary and reading comprehension, but you'll still need active practice for speaking and writing. Think of it as building a strong foundation.</p>
-
-            <p><strong>How long before I see results?</strong> Most people notice improved word recognition within 2-3 weeks of consistent exposure. Actual retention and recall take a bit longer – maybe 6-8 weeks for commonly encountered words.</p>
-
-            <p><strong>Can I overdo it?</strong> Yes, if too many words on a page are foreign, comprehension breaks down and learning stops. Start with maybe 5-10% foreign words and adjust based on your comfort level.</p>
-
-            <h3>The Bottom Line</h3>
-
-            <p>Your brain is wired to learn through repetition and context – that's how you mastered English as a kid. The challenge with adult language learning is recreating those conditions artificially. But when you do, the results can feel almost magical.</p>
-
-            <p>Stop fighting your brain's natural learning patterns. Instead of cramming vocabulary lists, create systems that give you repeated, varied exposures to new words. Let the compound effect do its work while you go about your normal routine.</p>
-
-            <p>Language learning doesn't have to be a second job. Sometimes the best approach is the one that happens so naturally, you barely notice it's working.</p>
-          </article>
-        </div>
+      <div class="blog-card glass-strong rounded-2xl p-6 cursor-pointer transition hover:scale-105" data-post="1">
+        <h2 class="text-xl font-bold gradient-text mb-2">Learn a Language Without Studying: How Janus Enables Passive Learning</h2>
+        <div class="text-gray-400 text-xs mb-2">01/06/2024</div>
+        <p class="text-gray-300">How Janus turns your daily browsing into effortless language learning—no flashcards, no pressure, just natural immersion.</p>
       </div>
-      <!-- Blog Post 3 (empty, collapsed) -->
-      <div class="mb-6 hidden">
-        <button type="button" class="w-full flex items-center justify-between px-6 py-4 glass-strong rounded-2xl text-xl font-bold gradient-text focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2 transition-all" aria-expanded="false" aria-controls="post3Content" id="post3Toggle">
-          <span>Blog Post Title #3</span>
-          <svg class="w-6 h-6 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div id="post3Content" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out glass-strong rounded-2xl p-6" aria-hidden="true">
-          <div class="text-gray-400 text-sm mb-2">Posted on 31/05/2025 by The Janus Team</div>
-          <div class="prose prose-invert max-w-none text-gray-200">
-            <!-- Add your blog content here -->
-          </div>
-        </div>
+      <div class="blog-card glass-strong rounded-2xl p-6 cursor-pointer transition hover:scale-105" data-post="2">
+        <h2 class="text-xl font-bold gradient-text mb-2">Why Seeing the Same Word 20 Times Beats Studying It Once</h2>
+        <div class="text-gray-400 text-xs mb-2">25/05/2025</div>
+        <p class="text-gray-300">Discover why repeated, casual encounters with words are the secret to long-term language retention and mastery.</p>
       </div>
-      <!-- Blog Post 4 (empty, collapsed) -->
-      <div class="mb-12">
-        <button type="button" class="w-full flex items-center justify-between px-6 py-4 glass-strong rounded-2xl text-xl font-bold gradient-text focus:outline-none focus:ring-2 focus:ring-blue-400 mb-6 transition-all" aria-expanded="true" aria-controls="post4Content" id="post4Toggle">
-          <span>The Power of Repetitive Immersion: Why Doing It Again (and Again) Supercharges Your Learning</span>
-          <svg class="w-6 h-6 ml-2 transition-transform duration-300 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div id="post4Content" class="max-h-[3000px] overflow-hidden transition-all duration-500 ease-in-out glass-strong rounded-2xl p-8 space-y-6" aria-hidden="false">
-          <div class="text-gray-400 text-sm mb-4">Posted on 31/05/2025 by The Janus Team</div>
-          <article class="prose prose-invert prose-lg max-w-none text-gray-200 space-y-6">
-            <p>Imagine you're learning to drive, cook, or pitch an idea to a client. The first time, your hands shake, your mind races, and every action feels clunky. The second time? A bit smoother. The third time? Hey, you're getting the hang of it. The secret ingredient here is repetition. And in the world of learning, especially in complex, high-pressure fields like medicine, marketing, or even languages, there's a special kind of repetition called repetitive immersion—where learners dive into the same task or scenario multiple times, with each attempt building on the last.</p>
-            <p>Let's break down the key benefits of repetitive immersion—and why doing the same thing over and over isn't just mindless grinding, but a proven way to build mastery.</p>
-            <h4>🧠 1️⃣ Builds Deep, Long-Term Memory</h4>
-            <p>Repetition strengthens neural pathways. Every time you revisit a task, your brain reinforces the memory, like layering threads to create a stronger rope. Over time, what was once unfamiliar becomes second nature. It's the difference between knowing how to do something and feeling how to do it. With repetitive immersion, learners don't just remember information; they integrate it into their core skillset.</p>
-            <h4>💪 2️⃣ Reduces Cognitive Load</h4>
-            <p>Ever felt overwhelmed by a complex task? That's cognitive load—the mental effort it takes to process information. Repetitive immersion helps lower this burden. By revisiting the same scenario multiple times, the brain starts to recognize patterns and chunks of information, making tasks feel easier and more automatic. The result? You can handle more complexity without burning out.</p>
-            <h4>😌 3️⃣ Boosts Confidence & Lowers Anxiety</h4>
-            <p>The first time you do something new, it's scary. But repeat it enough, and your brain whispers, "Hey, I've got this." Repetitive immersion helps build a sense of competence—learners start to believe in their abilities because they've seen themselves succeed. This growing confidence lowers anxiety, making it easier to tackle harder tasks in the future.</p>
-            <h4>🔄 4️⃣ Enhances Problem-Solving & Critical Thinking</h4>
-            <p>It's not just about memorization. Repetitive immersion allows learners to test different approaches, make mistakes, and try again. Each cycle offers a new chance to refine strategy, leading to better decision-making and problem-solving skills. Over time, learners aren't just following a script—they're adapting and thinking critically on the fly.</p>
-            <h4>🏃 5️⃣ Prepares You for Real-World Pressure</h4>
-            <p>Many tasks in life—emergency medical procedures, crisis negotiations, or even high-stakes marketing campaigns—are high-pressure. Repetitive immersion simulates this pressure over and over until it becomes manageable. You learn not just the task, but how to handle the stress. By the third or fourth run-through, what once felt overwhelming starts to feel like second nature.</p>
-            <h4>🎯 6️⃣ Improves Retention & Reduces Forgetting</h4>
-            <p>We all forget things. But repetition counters the brain's natural tendency to discard information over time (the "forgetting curve"). Repetitive immersion reinforces knowledge at key intervals, helping to lock it in for the long haul. Think of it like watering a plant at regular intervals—you keep the memory alive and growing.</p>
-            <h4>🌊 7️⃣ Encourages Flow States</h4>
-            <p>After enough repetitions, learners often experience a shift: instead of clunky, stressful effort, they slip into a state of flow—focused, confident, and in the zone. Repetitive immersion builds the muscle memory and mental models necessary for this state, where high performance feels effortless and intuitive.</p>
-            <h4>🚀 The Takeaway</h4>
-            <p>Repetitive immersion isn't busywork. It's a learning supercharger. Whether you're training doctors to handle emergencies, marketers to craft winning pitches, or students to learn a new language, the cycle of immerse → reflect → repeat builds deep skills, confidence, and resilience. It's the difference between knowing the theory and owning the skill.</p>
-            <p>So next time you feel like you're "just doing the same thing over again," remember: you're not just repeating. You're building mastery, one repetition at a time.</p>
-          </article>
-        </div>
+      <div class="blog-card glass-strong rounded-2xl p-6 cursor-pointer transition hover:scale-105" data-post="4">
+        <h2 class="text-xl font-bold gradient-text mb-2">The Power of Repetitive Immersion: Why Doing It Again (and Again) Supercharges Your Learning</h2>
+        <div class="text-gray-400 text-xs mb-2">31/05/2025</div>
+        <p class="text-gray-300">How repeating the same task builds deep memory, confidence, and real-world skill—across languages, medicine, and more.</p>
       </div>
-      <!-- Add more blog post sections as needed -->
-    </section>
+    </div>
+    <!-- Blog Post Full Content (hidden by default) -->
+    <div id="blogContent" class="hidden mt-10">
+      <button id="backToList" class="mb-6 px-4 py-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-semibold transition">&larr; Back to Blog List</button>
+      <div id="blogPostInner"></div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -264,28 +111,44 @@
   </footer>
 
   <script>
-  // Blog accordion logic
-  function setupBlogAccordion(postNum) {
-    const toggle = document.getElementById(`post${postNum}Toggle`);
-    const content = document.getElementById(`post${postNum}Content`);
-    if (!toggle || !content) return;
-    toggle.addEventListener('click', function() {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', !expanded);
-      content.setAttribute('aria-hidden', expanded);
-      if (!expanded) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        toggle.querySelector('svg').classList.add('rotate-180');
-      } else {
-        content.style.maxHeight = '0';
-        toggle.querySelector('svg').classList.remove('rotate-180');
-      }
+  // Blog post content data
+  const blogPosts = {
+    5: {
+      title: "TF–IDF: Finding the Most Important Words",
+      date: "01/06/2025",
+      content: `<article class=\"prose prose-invert prose-lg max-w-none text-gray-200 space-y-8\"><h2 class=\"gradient-text font-extrabold text-2xl mb-2\">TF–IDF: Finding the Most Important Words</h2><p>Want to know which words make your article unique? <span class=\"text-blue-300 font-semibold\">TF–IDF</span> is a simple but powerful way to find out. It highlights words that are <span class=\"text-green-300 font-semibold\">common in your article</span> but <span class=\"text-pink-300 font-semibold\">rare everywhere else</span>.</p><hr class=\"border-blue-400/30 my-4\" /><h3 class=\"font-bold text-xl mt-6\">How Does TF–IDF Work?</h3><div class=\"bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4\"><ol class=\"list-decimal list-inside space-y-2\"><li><strong>Term Frequency (TF):</strong> How many times does a word appear in your article?</li><li><strong>Inverse Document Frequency (IDF):</strong> How rare is that word across all articles?</li></ol></div><p>Combine them, and you get a score for each word. The higher the score, the more \"special\" that word is to your article.</p><blockquote class=\"border-l-4 border-green-400 pl-4 italic text-green-200 bg-white/5 rounded-md\">TF–IDF = (How often a word appears in your article) × (How rare it is in the whole collection)</blockquote><hr class=\"border-blue-400/30 my-4\" /><h4 class=\"font-semibold text-lg mt-4\">The Formula</h4><pre class=\"bg-black/60 rounded-lg p-4 text-blue-200 overflow-x-auto\"><code>IDF = log(total number of articles ÷ number of articles containing that word)</code></pre><ul class=\"list-disc list-inside space-y-1\"><li><span class=\"font-semibold text-blue-300\">TF</span>: Count of the word in your article.</li><li><span class=\"font-semibold text-pink-300\">IDF</span>: Rarity of the word across all articles.</li></ul><hr class=\"border-blue-400/30 my-4\" /><h4 class=\"font-semibold text-lg mt-4\">A Quick Example</h4><div class=\"bg-white/5 border-l-4 border-purple-400 p-4 rounded-xl mb-4\"><p class=\"mb-2\">Suppose your article says:</p><blockquote class=\"border-l-4 border-blue-400 pl-4 text-blue-200 bg-white/10 rounded-md\">\"puppies learn tricks quickly and love treats.\"</blockquote><ul class=\"list-disc list-inside mt-2\"><li>TF for \"puppies\" is 1. TF for \"learn\" is 1, and so on.</li><li>In a collection of 50 articles:<ul class=\"list-disc ml-6\"><li>\"puppies\" appears in 3 articles → <span class=\"text-blue-300\">IDF ≈ log(50 ÷ 3)</span></li><li>\"quickly\" appears in 20 articles → <span class=\"text-blue-300\">IDF ≈ log(50 ÷ 20)</span></li><li>\"love\" appears in 40 articles → <span class=\"text-blue-300\">IDF ≈ log(50 ÷ 40)</span></li></ul></li><li>\"puppies\" gets a higher TF–IDF score because it's rare elsewhere.</li></ul></div><hr class=\"border-blue-400/30 my-4\" /><h4 class=\"font-semibold text-lg mt-4\">Why Use TF–IDF?</h4><ul class=\"list-disc list-inside space-y-1\"><li><span class=\"font-semibold text-green-300\">Search engines</span> use it to rank pages.</li><li><span class=\"font-semibold text-green-300\">Automatic tagging</span>: Pick top-scoring words as tags.</li><li><span class=\"font-semibold text-green-300\">Text analysis</span>: See what makes your article unique.</li></ul><hr class=\"border-blue-400/30 my-4\" /><h4 class=\"font-semibold text-lg mt-4\">How to Try It Yourself</h4><ol class=\"list-decimal list-inside space-y-2\"><li>Collect a handful of articles (your <span class=\"italic\">corpus</span>).</li><li>Preprocess each article:<ul class=\"list-disc ml-6\"><li>Convert text to lowercase.</li><li>Remove punctuation.</li><li>Remove common filler words (stopwords) like \"the,\" \"and,\" \"is.\"</li></ul></li><li>For each article and each word:<ul class=\"list-disc ml-6\"><li>Count how many times it appears (TF).</li><li>Count how many articles it appears in (DF), then compute IDF.</li><li>Multiply TF × IDF to get the score.</li></ul></li><li>Sort words by score and pick the top ones. Those are your most important words.</li></ol><div class=\"bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mt-6\"><span class=\"font-bold text-blue-300\">Bottom line:</span> <span class=\"text-gray-100\">TF–IDF is all about finding what makes your text special. Use it to discover keywords, improve searches, or analyze what stands out in any article.</span></div></article>`
+    },
+    1: {
+      title: "Learn a Language Without Studying: How Janus Enables Passive Learning",
+      date: "01/06/2024",
+      content: `<article class="prose prose-invert prose-lg max-w-none text-gray-200 space-y-8"><h2 class="gradient-text font-extrabold text-2xl mb-2">Learn a Language Without Studying: How Janus Enables Passive Learning</h2><div class="text-gray-400 text-sm mb-4">Posted on June 1, 2024 by The Janus Team</div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">Learning While You Live Your Life</h3><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><p>What if learning a language could be as easy as scrolling through your favorite websites? With Janus, it is. Instead of carving out time for flashcards or grammar drills, Janus gently weaves foreign words into the pages you already read. You might spot <em>gracias</em> instead of "thank you" in a news article, or <em>bonjour</em> in a comment thread. The best part? You still get the gist, because your brain fills in the blanks using context. Over time, those new words start to feel familiar—without you even trying.</p><p>Personally, I started using Janus for Portuguese. After a few months, I found myself understanding a conversation at a Brazilian restaurant—no studying, just lots of little exposures while browsing the web.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">Why Context Beats Cramming</h3><div class="bg-white/5 border-l-4 border-green-400 p-4 rounded-xl mb-4"><p>Remember memorizing endless vocabulary lists in school? You'd ace the test, then forget half the words by next week. That's because our brains love stories, not lists. When you see a word in context—like "I need to buy 牛奶 for breakfast"—you learn that 牛奶 means milk, but you also connect it to breakfast, shopping, and daily life. That's how kids learn their first language: by hearing words in real situations, over and over. Janus brings that natural process to your second language.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">No Time? No Problem.</h3><div class="bg-white/5 border-l-4 border-purple-400 p-4 rounded-xl mb-4"><p>Let's be real: most of us want to learn a language, but life gets busy. Work, family, Netflix—who has time for study sessions? Janus turns your regular internet time into language practice. Even if you're just scrolling Reddit, you're getting passive exposure. Some days you'll notice the foreign words more than others, and that's totally fine. The repetition happens naturally, across different sites and topics.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">The Magic of Small Exposures</h3><div class="bg-white/5 border-l-4 border-pink-400 p-4 rounded-xl mb-4"><p>Here's the secret: you won't notice progress day to day. But after a few weeks, you'll start recognizing words you never studied. It's like how you learn to recognize a friend's car—not by memorizing, but by seeing it again and again. Each little exposure adds up, and suddenly, you're reading or listening with more confidence.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">Ready to Try?</h3><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><p>If you've been putting off language learning because you "don't have time," Janus is for you. Just install it, pick a language, and browse as usual. No pressure, no guilt, no schedules. Let the learning happen in the background—and one day, you'll surprise yourself with how much you understand.</p></div></article>`
+    },
+    2: {
+      title: "Why Seeing the Same Word 20 Times Beats Studying It Once",
+      date: "25/05/2025",
+      content: `<article class="prose prose-invert prose-lg max-w-none text-gray-200 space-y-8"><h2 class="gradient-text font-extrabold text-2xl mb-2">Why Seeing the Same Word 20 Times Beats Studying It Once</h2><div class="text-gray-400 text-sm mb-4">Last updated: 25 May 2025</div><hr class="border-blue-400/30 my-4" /><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><strong>Quick version:</strong> Your brain learns words best through lots of casual, repeated encounters—not by cramming. Here's why that works, and how to make it happen.</div><h3 class="font-bold text-xl mt-6">Why Repetition Really Works</h3><div class="bg-white/5 border-l-4 border-green-400 p-4 rounded-xl mb-4"><p>Ever notice how some words just stick, while others slip away? It's not about how hard you study, but how often you bump into those words in real life. Research shows you need to see a new word 5–10 times, in different situations, before it really becomes yours. Not all at once—spread out, in different places, over days or weeks.</p><p>Think about the word "spam" (the email kind). You probably never studied it, but you saw it in your inbox, heard friends talk about it, and read about it online. Each little encounter made it more familiar, until you just knew it.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">How Your Brain Builds Memories</h3><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><p>Every time you see a word again, your brain strengthens the connections—like carving a path through a forest. The more you walk it, the clearer it gets. This is called "memory consolidation," but really, it's just your brain making shortcuts to things it sees a lot. The best part? You don't have to force it. If you see a word enough, in enough places, your brain will remember it for you.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">Context Is Everything</h3><div class="bg-white/5 border-l-4 border-purple-400 p-4 rounded-xl mb-4"><p>Each time you see a word in a new context, you learn something extra. Maybe "banco" first means "bank" in a money article, then "bench" in a travel blog. Context fills in the details, so you're not just memorizing definitions—you're learning how words really work. That's why people who learn by immersion sound more natural than those who just study textbooks.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">How to Get More Repetition (Without Boredom)</h3><div class="bg-white/5 border-l-4 border-pink-400 p-4 rounded-xl mb-4"><ul class="list-disc list-inside"><li><strong>Mix it into your habits.</strong> Read the news? Use a tool that swaps in foreign words. Listen to podcasts? Try the same episode twice—once in English, once in your target language.</li><li><strong>Follow your interests.</strong> Love cooking? You'll see food words again and again in recipes and blogs.</li><li><strong>Switch it up.</strong> Read, listen, and speak. Each way you encounter a word makes it easier to remember.</li></ul></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">Let Technology Help</h3><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><p>Don't want to track all this yourself? Use tools like Janus, which automatically swap in foreign words as you browse. Or try spaced repetition apps like Anki (if you like flashcards). The key is to make repetition happen naturally, not as a chore.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">How You Know It's Working</h3><div class="bg-white/5 border-l-4 border-green-400 p-4 rounded-xl mb-4"><p>You'll start to recognize words before you can even remember what they mean. Or you'll read a sentence with a foreign word and just "get it" without translating. That's your brain doing its thing.</p><p>Don't expect big changes overnight. It's like watching a plant grow—slow at first, but amazing over time.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">FAQ</h3><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><ul class="list-disc list-inside"><li><strong>Will this make me fluent?</strong> Not by itself. Repetition is great for vocabulary and reading, but you'll still need to practice speaking and writing.</li><li><strong>How long before I see results?</strong> Most people notice they recognize more words in 2–3 weeks. Real recall takes a bit longer—maybe 6–8 weeks for common words.</li><li><strong>Can I overdo it?</strong> Yes! If too many words are foreign, it gets overwhelming. Start with 5–10% and adjust as you go.</li></ul></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">The Bottom Line</h3><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><p>Your brain is built to learn through repetition and context. Don't fight it—set up systems that give you lots of little exposures, and let the magic happen while you live your life.</p></div></article>`
+    },
+    4: {
+      title: "The Power of Repetitive Immersion: Why Doing It Again (and Again) Supercharges Your Learning",
+      date: "31/05/2025",
+      content: `<article class="prose prose-invert prose-lg max-w-none text-gray-200 space-y-8"><h2 class="gradient-text font-extrabold text-2xl mb-2">The Power of Repetitive Immersion: Why Doing It Again (and Again) Supercharges Your Learning</h2><div class="text-gray-400 text-sm mb-4">Posted on 31/05/2025 by The Janus Team</div><hr class="border-blue-400/30 my-4" /><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><p>Ever notice how the first time you try something new—like driving, cooking, or giving a big presentation—it feels awkward and stressful? But the second or third time, it's a little easier. That's the magic of repetition. In learning, especially in high-pressure fields (think medicine, marketing, or languages), there's a special kind of practice called <strong>repetitive immersion</strong>: doing the same thing, again and again, each time building on what you learned before.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">Why Repetitive Immersion Works</h3><div class="bg-white/5 border-l-4 border-green-400 p-4 rounded-xl mb-4"><h4 class="font-semibold text-lg">🧠 Builds Deep, Lasting Memory</h4><p>Every time you repeat a task, your brain strengthens the connections—like weaving a rope from many threads. What was once unfamiliar becomes second nature. You don't just remember facts; you start to feel the skill in your bones.</p></div><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><h4 class="font-semibold text-lg">💪 Lowers Mental Effort</h4><p>Big, complex tasks can feel overwhelming at first. But with each repetition, your brain starts to spot patterns and shortcuts. Suddenly, what felt hard becomes almost automatic. You can handle more, with less stress.</p></div><div class="bg-white/5 border-l-4 border-purple-400 p-4 rounded-xl mb-4"><h4 class="font-semibold text-lg">😌 Builds Confidence & Calms Nerves</h4><p>The first time is always the scariest. But as you repeat, you see yourself succeed—and that builds real confidence. The more you practice, the less anxious you feel, and the more you trust your own abilities.</p></div><div class="bg-white/5 border-l-4 border-pink-400 p-4 rounded-xl mb-4"><h4 class="font-semibold text-lg">🔄 Sharpens Problem-Solving</h4><p>Repetitive immersion isn't just about memorizing steps. Each round gives you a chance to try new approaches, make mistakes, and learn from them. Over time, you get better at thinking on your feet and solving problems in real time.</p></div><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><h4 class="font-semibold text-lg">🏃 Prepares You for Real-World Pressure</h4><p>Some situations—like emergencies or big presentations—are stressful no matter what. But if you've practiced under pressure, it starts to feel manageable. By the third or fourth try, what once felt overwhelming is just another challenge you know how to handle.</p></div><div class="bg-white/5 border-l-4 border-green-400 p-4 rounded-xl mb-4"><h4 class="font-semibold text-lg">🎯 Helps You Remember for the Long Haul</h4><p>We all forget things. But repetition is like watering a plant: it keeps your knowledge alive and growing, even as time passes. Each review locks in what you've learned.</p></div><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><h4 class="font-semibold text-lg">🌊 Gets You in the Zone</h4><p>After enough practice, you'll notice a shift: things that once took effort start to flow. You get into a "zone" where you're focused, confident, and performing at your best. That's the power of muscle memory and mental models built through repetition.</p></div><hr class="border-blue-400/30 my-4" /><h3 class="font-bold text-xl mt-6">🚀 The Takeaway</h3><div class="bg-white/5 border-l-4 border-blue-400 p-4 rounded-xl mb-4"><p>Repetitive immersion isn't busywork—it's a superpower for learning. Whether you're training for emergencies, pitching ideas, or picking up a new language, the cycle of <strong>immerse → reflect → repeat</strong> builds deep skills, confidence, and resilience. Next time you feel like you're "just doing the same thing again," remember: you're not just repeating. You're building mastery, one round at a time.</p></div></article>`
+    }
+  };
+  // Blog navigation logic
+  document.querySelectorAll('.blog-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const postId = this.getAttribute('data-post');
+      document.getElementById('blogList').classList.add('hidden');
+      document.getElementById('blogContent').classList.remove('hidden');
+      document.getElementById('blogPostInner').innerHTML = blogPosts[postId].content;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  }
-  setupBlogAccordion(1);
-  setupBlogAccordion(2);
-  setupBlogAccordion(3);
-  setupBlogAccordion(4);
+  });
+  document.getElementById('backToList').addEventListener('click', function() {
+    document.getElementById('blogContent').classList.add('hidden');
+    document.getElementById('blogList').classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
   </script>
 </body>
 </html>

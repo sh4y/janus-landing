@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janus - Stop Studying. Start Browsing.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .logo {
+            margin-bottom: 80px;
+            animation: fadeInDown 4s ease-out;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .main-heading {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 60px;
+            animation: fadeInUp 4s ease-out 0.3s both;
+        }
+
+        .stop {
+            color: #ffffff;
+        }
+
+        .studying {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .start {
+            color: #ffffff;
+        }
+
+        .browsing {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .janus-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description {
+            font-size: clamp(18px, 3vw, 28px);
+            font-weight: 300;
+            line-height: 1.6;
+            color: #b8c5d6;
+            animation: fadeInUp 4s ease-out 0.6s both;
+        }
+
+        .highlight-palabras {
+            background-color: #ffd700;
+            color: #1a1a2e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .highlight-vocabulario {
+            background-color: #ffd700;
+            color: #1a1a2e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                margin-bottom: 60px;
+            }
+            
+            .main-heading {
+                margin-bottom: 40px;
+            }
+            
+            .logo-text {
+                font-size: 20px;
+                letter-spacing: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-text">JANUS</div>
+        </div>
+
+        <h1 class="main-heading">
+            <div class="stop">Stop</div>
+            <div class="studying">Studying.</div>
+            <div class="start">Start</div>
+            <div class="browsing">Browsing.</div>
+            <div class="janus-text">Janus.</div>
+        </h1>
+
+        <p class="description">
+            Janus changes <span class="highlight-palabras">palabras</span> on your page into a target language. Learn <span class="highlight-vocabulario">vocabulario</span> naturally while browsing your favorite content.
+        </p>
+    </div>
+</body>
+</html>
