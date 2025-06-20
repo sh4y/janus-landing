@@ -287,10 +287,22 @@
           </div>
         </div>
       </div>
-      <div class="text-sm text-gray-400 mb-2 text-center">
-        🔒 No credit card required • ⚡ Install in seconds • 🌍 Works on any website
-        <br>
-        <span class="inline-block mt-2 px-3 py-1 rounded-full bg-green-700/80 text-green-200 font-semibold text-xs align-middle">Privacy-first: Your learning is your business. We never collect personal data.</span>
+      <div class="text-center mb-2">
+        <div class="flex flex-wrap justify-center items-center gap-2 text-sm text-gray-400 mb-4">
+          <span class="flex items-center gap-1">🔒 No credit card required</span>
+          <span class="text-gray-600">•</span>
+          <span class="flex items-center gap-1">⚡ Install for free in seconds</span>
+          <span class="text-gray-600">•</span>
+          <span class="flex items-center gap-1">🌍 Works on any website</span>
+        </div>
+        <div class="max-w-2xl mx-auto">
+          <div class="inline-block px-4 py-2 rounded-xl bg-green-700/80 text-green-200 font-semibold text-xs">
+            🔐 Privacy-first: Your learning is your business. We never collect personal data.
+          </div>
+          <div class="inline-block px-4 py-2 rounded-xl bg-blue-700/80 text-blue-200 font-semibold text-xs mt-2">
+            🇩🇪 As a German company, we take "Datenschutz" extremely seriously.
+          </div>
+        </div>
       </div>
     </div>
     <div class="absolute top-1/4 left-10 w-16 h-16 rounded-full bg-blue-500/20 floating"></div>
@@ -414,6 +426,61 @@
           </div>
           <h3 class="text-xl font-bold mb-4">Multiple Languages</h3>
           <p class="text-gray-300">Support for dozens of languages with more being added regularly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Desktop Reminder Form -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="glass-strong rounded-3xl p-8 text-center border-2 border-orange-400/30">
+        <div class="mb-6">
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            📱 Browsing on mobile or a different browser?
+          </h3>
+          <p class="text-lg text-gray-300 mb-4">
+            Janus currently only works on desktop Chrome and Chromium-based browsers. 
+          </p>
+          <p class="text-gray-400 mb-6">
+            Drop your email below and we'll send you a friendly reminder to check out Janus 
+            when you're back at your computer. No spam, just a simple "hey, remember that language learning thing?"
+            The email is deleted after the reminder is sent. 
+            
+          </p>
+        </div>
+
+                <form name="desktop-reminder" method="POST" data-netlify="true" class="max-w-md mx-auto" id="reminderForm">
+          <input type="hidden" name="form-name" value="desktop-reminder" />
+          <div class="flex flex-col sm:flex-row gap-3" id="formFields">
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="your.email@example.com" 
+              required 
+              class="flex-1 px-4 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              id="emailInput"
+            />
+            <button 
+              type="submit" 
+              class="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full font-semibold text-white hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all shadow-lg whitespace-nowrap"
+              id="submitBtn"
+            >
+              Remind me!
+            </button>
+          </div>
+          <div id="formSuccess" class="hidden mt-4 p-4 rounded-xl bg-green-800/50 border border-green-400/30">
+            <p class="text-green-200 font-semibold">✅ Got it! We'll remind you when you're back on desktop.</p>
+          </div>
+          <div id="formError" class="hidden mt-4 p-4 rounded-xl bg-red-800/50 border border-red-400/30">
+            <p class="text-red-200">Oops! Something went wrong. Please try again.</p>
+          </div>
+          </form>
+
+        <div class="mt-6 text-sm text-gray-400">
+          <span class="inline-block px-3 py-1 rounded-full bg-blue-700/50 text-blue-200">
+            💡 Pro tip: Janus works amazing on desktop Chrome - that's where the magic happens!
+          </span>
         </div>
       </div>
     </div>
@@ -933,6 +1000,43 @@
         }, 400);
       }, 1800);
     })();
+
+    // Handle desktop reminder form submission
+    const reminderForm = document.getElementById('reminderForm');
+    if (reminderForm) {
+      reminderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(reminderForm);
+        const submitBtn = document.getElementById('submitBtn');
+        const formFields = document.getElementById('formFields');
+        const formSuccess = document.getElementById('formSuccess');
+        const formError = document.getElementById('formError');
+        
+        // Show loading state
+        submitBtn.innerHTML = 'Sending...';
+        submitBtn.disabled = true;
+        
+        fetch('/', {
+          method: 'POST',
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+          // Success
+          formFields.style.display = 'none';
+          formSuccess.classList.remove('hidden');
+          formError.classList.add('hidden');
+        })
+        .catch(() => {
+          // Error
+          formError.classList.remove('hidden');
+          formSuccess.classList.add('hidden');
+          submitBtn.innerHTML = 'Remind me!';
+          submitBtn.disabled = false;
+        });
+      });
+    }
   </script>
 </body>
 </html>
